@@ -1,8 +1,7 @@
 # mlcourses
-The goal is to finish 5 courses (specifically the exercises) before the year ends. I'm focusing on applied courses before transitioning into foundational courses.
+The goal is to finish 5 courses (specifically the exercises) before the year ends. I'm focusing on applied courses before transitioning into foundational courses. Also, if all goes well, i'll try to complete either [bishop](https://github.com/Atcold/NYU-DLSP20.git) or [murphy](https://probml.github.io/pml-book/book1.html) depending on if I want to dive into deep learning or classical machine learning.
 
-
-I will also only include the notebooks/exercises for the courses. The materials are linked in the sections
+I will also only include the notebooks/exercises for the courses. The materials are linked in the sections.
 
 ## [Deep Learning Systems Course](https://dlsyscourse.org/assignments/) (2024 version)
 - [ ] 0
