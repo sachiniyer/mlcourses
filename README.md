@@ -4,14 +4,14 @@ The goal is to finish 5 courses (specifically the exercises) before the year end
 
 I will also only include the notebooks/exercises for the courses. The materials are linked in the sections
 
-## [Deep Learning Systems Course](https://dlsyscourse.org/assignments/)
+## [Deep Learning Systems Course](https://dlsyscourse.org/assignments/) (2024 version)
 - [ ] 0
 - [ ] 1
 - [ ] 2
 - [ ] 3
 - [ ] 4 - not out yet
 
-## [NYU-DLSP20](https://github.com/atcold/NYU-DLSP20)
+## [NYU-DLSP20](https://github.com/atcold/NYU-DLSP20) (2020 version)
 - [ ] 0
 - [ ] 1
 - [ ] 2
@@ -30,7 +30,7 @@ I will also only include the notebooks/exercises for the courses. The materials 
 - [ ] 15
 - [ ] 16
 
-## [eecs189](https://eecs189.org/)
+## [eecs189](https://eecs189.org/) (2024 version)
 - [ ] 1
 - [ ] 2
 - [ ] 3
