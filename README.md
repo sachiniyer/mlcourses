@@ -11,16 +11,6 @@ I will also only include the notebooks/exercises for the courses. The materials 
 - [ ] 3
 - [ ] 4 - not out yet
 
-## [Neural Networks: Zero to Hero](https://karpathy.ai/zero-to-hero.html)
-- [ ] 1
-- [ ] 2
-- [ ] 3
-- [ ] 4
-- [ ] 5
-- [ ] 6
-- [ ] 7
-- [ ] 8
-
 ## [NYU-DLSP20](https://github.com/atcold/NYU-DLSP20)
 - [ ] 0
 - [ ] 1
@@ -56,3 +46,5 @@ I will also only include the notebooks/exercises for the courses. The materials 
 - [ ] 13 - not out yet
 - [ ] 14 - not out yet
 - [ ] 15 - not out yet
+
+## [Neural Networks: Zero to Hero](https://karpathy.ai/zero-to-hero.html)  or [LLM101n](https://github.com/karpathy/LLM101n)
