@@ -4,16 +4,6 @@ The goal is to finish 5 courses (specifically the exercises) before the year end
 
 I will also only include the notebooks/exercises for the courses. The materials are linked in the sections
 
-## [Machine Learning Compilation](https://mlc.ai/summer22/schedule)
-- [ ] 1
-- [ ] 2
-- [ ] 3
-- [ ] 4
-- [ ] 5
-- [ ] 6
-- [ ] 7
-- [ ] 8
-
 ## [Neural Networks: Zero to Hero](https://karpathy.ai/zero-to-hero.html)
 - [ ] 1
 - [ ] 2
