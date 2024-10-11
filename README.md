@@ -4,19 +4,6 @@ The goal is to finish 5 courses (specifically the exercises) before the year end
 
 I will also only include the notebooks/exercises for the courses. The materials are linked in the sections
 
-## [FastBook](https://github.com/fastai/fastbook/tree/master)
-- [ ] 0
-- [ ] 1
-- [ ] 2
-- [ ] 3
-- [ ] 4
-- [ ] 5
-- [ ] 6
-- [ ] 7
-- [ ] 8
-- [ ] 9
-- [ ] 10
-
 ## [Machine Learning Compilation](https://mlc.ai/summer22/schedule)
 - [ ] 1
 - [ ] 2
