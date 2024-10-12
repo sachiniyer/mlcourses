@@ -4,7 +4,7 @@ The goal is to finish 5 courses or textbooks (specifically the exercises) before
 I will also only include the notebooks/exercises for the courses. The materials are linked in the sections.
 
 ## [Deep Learning Systems Course](https://dlsyscourse.org/assignments/) (2024 version)
-- [ ] 0
+- [x] 0
 - [ ] 1
 - [ ] 2
 - [ ] 3
