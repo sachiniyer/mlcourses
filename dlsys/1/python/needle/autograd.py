@@ -1,4 +1,5 @@
 """Core data structures."""
+
 import needle
 from .backend_numpy import Device, cpu, all_devices
 from typing import List, Optional, NamedTuple, Tuple, Union
@@ -15,11 +16,14 @@ TENSOR_COUNTER = 0
 # as the backend for our computations, this line will change in later homeworks
 
 import numpy as array_api
+
 NDArray = numpy.ndarray
 
 
 class Op:
     """Operator definition."""
+
+    # indicator for the different types of Operations that we want to perform
 
     def __call__(self, *args):
         raise NotImplementedError()
@@ -44,6 +48,8 @@ class Op:
         self, out_grad: "Value", node: "Value"
     ) -> Union["Value", Tuple["Value"]]:
         """Compute partial adjoint for each input value for a given output adjoint.
+
+        This is just computing the partial adjoint values here.
 
         Parameters
         ----------
@@ -89,13 +95,17 @@ class TensorTupleOp(Op):
 class Value:
     """A value in the computational graph."""
 
+    # this class is really a node in the computational graph (as well as the input nodes)
+
     # trace of computational graph
-    op: Optional[Op]
-    inputs: List["Value"]
+    op: Optional[Op]  # What is the operation needed to compute this value
+    inputs: List["Value"]  # corresponds to the input in a computational graph operation
     # The following fields are cached fields for
     # dynamic computation
-    cached_data: NDArray
-    requires_grad: bool
+    cached_data: NDArray  # defined as numpy ndarray (for the purpose of this lecture)
+    requires_grad: (
+        bool  # whether we want to compute gradients with respect to this value
+    )
 
     def realize_cached_data(self):
         """Run compute to realize the cached data"""
@@ -247,9 +257,9 @@ class Tensor(Value):
         tensor._init(
             None,
             [],
-            cached_data=data
-            if not isinstance(data, Tensor)
-            else data.realize_cached_data(),
+            cached_data=(
+                data if not isinstance(data, Tensor) else data.realize_cached_data()
+            ),
             requires_grad=requires_grad,
         )
         return tensor
@@ -360,8 +370,6 @@ class Tensor(Value):
 
     __radd__ = __add__
     __rmul__ = __mul__
-
-
 
 
 def compute_gradient_of_variables(output_tensor, out_grad):
