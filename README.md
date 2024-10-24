@@ -5,7 +5,7 @@ I will also only include the notebooks/exercises for the courses. The materials 
 
 ## [Deep Learning Systems Course](https://dlsyscourse.org/assignments/) (2024 version)
 - [x] 0
-- [ ] 1
+- [x] 1
 - [ ] 2
 - [ ] 3
 - [ ] 4 - not out yet

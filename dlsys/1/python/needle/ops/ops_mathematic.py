@@ -205,10 +205,19 @@ class BroadcastTo(TensorOp):
         return array_api.broadcast_to(a, self.shape)
         ### END YOUR SOLUTION
 
+    # http://coldattic.info/post/116/
     def gradient(self, out_grad, node):
         ### BEGIN YOUR SOLUTION
-        lhs, rhs = node.inputs
-        return sum(out_grad, axes=(0, 1)), None
+        # We know that broadcast is actually more simply a matmul between
+        # the original tensor and a tensor of ones with the desired shape.
+        # therefore, we can use the same summation gradient technique as in matmul
+        shape = list(node.inputs[0].shape)
+        axes = []
+        shape = [1] * (len(self.shape) - len(shape)) + shape
+        for i, s in enumerate(self.shape):
+            if i >= len(shape) or s != shape[i]:
+                axes.append(i)
+        return reshape(summation(out_grad, tuple(axes)), node.inputs[0].shape)
         ### END YOUR SOLUTION
 
 
@@ -227,8 +236,18 @@ class Summation(TensorOp):
 
     def gradient(self, out_grad, node):
         ### BEGIN YOUR SOLUTION
-        lhs = node.inputs[0]
-        return broadcast_to(out_grad, lhs.shape)
+        shape = node.inputs[0].shape
+        shape_out = [1] * len(shape)
+        if self.axes:
+            s = set(self.axes)
+        else:
+            s = set(range(len(shape)))
+        j = 0
+        for i in range(len(shape)):
+            if i not in s:
+                shape_out[i] = out_grad.shape[j]
+                j += 1
+        return broadcast_to(reshape(out_grad, tuple(shape_out)), shape)
         ### END YOUR SOLUTION
 
 
@@ -242,10 +261,22 @@ class MatMul(TensorOp):
         return array_api.matmul(a, b)
         ### END YOUR SOLUTION
 
+    # https://cs231n.stanford.edu/vecDerivs.pdf
     def gradient(self, out_grad, node):
         ### BEGIN YOUR SOLUTION
         lhs, rhs = node.inputs
-        return matmul(out_grad, transpose(rhs)), matmul(transpose(lhs), out_grad)
+        # Multiply the gradient by the transpose of the other matrix, as per the chain rule
+        lhs_grad, rhs_grad = matmul(out_grad, transpose(rhs)), matmul(
+            transpose(lhs), out_grad
+        )
+        # handle different shapes in the case of batched matmul
+        if lhs_grad.shape != lhs.shape:
+            lhs_axes = [i for i in range(len(lhs_grad.shape) - len(lhs.shape))]
+            lhs_grad = summation(lhs_grad, axes=tuple(lhs_axes))
+        if rhs_grad.shape != rhs.shape:
+            rhs_axes = [i for i in range(len(rhs_grad.shape) - len(rhs.shape))]
+            rhs_grad = summation(rhs_grad, axes=tuple(rhs_axes))
+        return lhs_grad, rhs_grad
         ### END YOUR SOLUTION
 
 
@@ -311,8 +342,9 @@ class ReLU(TensorOp):
 
     def gradient(self, out_grad, node):
         ### BEGIN YOUR SOLUTION
-        lhs = node.inputs[0]
-        return out_grad * array_api.where(lhs > 0, 1, 0)
+        a = node.inputs[0].realize_cached_data()
+        mask = Tensor(a > 0)
+        return out_grad * mask
         ### END YOUR SOLUTION
 
 
