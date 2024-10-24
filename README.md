@@ -10,25 +10,6 @@ I will also only include the notebooks/exercises for the courses. The materials 
 - [ ] 3
 - [ ] 4 - not out yet
 
-## [NYU-DLSP20](https://github.com/atcold/NYU-DLSP20) (2020 version)
-- [ ] 0
-- [ ] 1
-- [ ] 2
-- [ ] 3
-- [ ] 4
-- [ ] 5
-- [ ] 6
-- [ ] 7
-- [ ] 8
-- [ ] 9
-- [ ] 10
-- [ ] 11
-- [ ] 12
-- [ ] 13
-- [ ] 14
-- [ ] 15
-- [ ] 16
-
 ## [eecs189](https://eecs189.org/) (2024 version)
 - [ ] 1
 - [ ] 2
