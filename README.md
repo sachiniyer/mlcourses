@@ -10,23 +10,6 @@ I will also only include the notebooks/exercises for the courses. The materials 
 - [ ] 3
 - [ ] 4 - not out yet
 
-## [eecs189](https://eecs189.org/) (2024 version)
-- [ ] 1
-- [ ] 2
-- [ ] 3
-- [ ] 4
-- [ ] 5
-- [ ] 6
-- [ ] 7
-- [ ] 8 - not out yet
-- [ ] 9 - not out yet
-- [ ] 10 - not out yet
-- [ ] 11 - not out yet
-- [ ] 12 - not out yet
-- [ ] 13 - not out yet
-- [ ] 14 - not out yet
-- [ ] 15 - not out yet
-
 ## [AISYS-fa2024](https://ucbsky.github.io/aisys-fa2024/schedule/)
 - [ ] 0
 - [ ] 1
@@ -51,6 +34,23 @@ I will also only include the notebooks/exercises for the courses. The materials 
 - [ ] 20
 - [ ] 21
 - [ ] 22
+
+## [eecs189](https://eecs189.org/) (2024 version)
+- [ ] 1
+- [ ] 2
+- [ ] 3
+- [ ] 4
+- [ ] 5
+- [ ] 6
+- [ ] 7
+- [ ] 8 - not out yet
+- [ ] 9 - not out yet
+- [ ] 10 - not out yet
+- [ ] 11 - not out yet
+- [ ] 12 - not out yet
+- [ ] 13 - not out yet
+- [ ] 14 - not out yet
+- [ ] 15 - not out yet
 
 ## potential other courses
 - https://www.ualberta.ca/en/admissions-programs/online-courses/reinforcement-learning/index.html
