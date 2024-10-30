@@ -1,4 +1,5 @@
 """Core data structures."""
+
 import needle
 from .backend_numpy import Device, cpu, all_devices
 from typing import List, Optional, NamedTuple, Tuple, Union
@@ -15,11 +16,14 @@ TENSOR_COUNTER = 0
 # as the backend for our computations, this line will change in later homeworks
 
 import numpy as array_api
+
 NDArray = numpy.ndarray
 
 
 class Op:
     """Operator definition."""
+
+    # indicator for the different types of Operations that we want to perform
 
     def __call__(self, *args):
         raise NotImplementedError()
@@ -44,6 +48,8 @@ class Op:
         self, out_grad: "Value", node: "Value"
     ) -> Union["Value", Tuple["Value"]]:
         """Compute partial adjoint for each input value for a given output adjoint.
+
+        This is just computing the partial adjoint values here.
 
         Parameters
         ----------
@@ -89,13 +95,17 @@ class TensorTupleOp(Op):
 class Value:
     """A value in the computational graph."""
 
+    # this class is really a node in the computational graph (as well as the input nodes)
+
     # trace of computational graph
-    op: Optional[Op]
-    inputs: List["Value"]
+    op: Optional[Op]  # What is the operation needed to compute this value
+    inputs: List["Value"]  # corresponds to the input in a computational graph operation
     # The following fields are cached fields for
     # dynamic computation
-    cached_data: NDArray
-    requires_grad: bool
+    cached_data: NDArray  # defined as numpy ndarray (for the purpose of this lecture)
+    requires_grad: (
+        bool  # whether we want to compute gradients with respect to this value
+    )
 
     def realize_cached_data(self):
         """Run compute to realize the cached data"""
@@ -247,9 +257,9 @@ class Tensor(Value):
         tensor._init(
             None,
             [],
-            cached_data=data
-            if not isinstance(data, Tensor)
-            else data.realize_cached_data(),
+            cached_data=(
+                data if not isinstance(data, Tensor) else data.realize_cached_data()
+            ),
             requires_grad=requires_grad,
         )
         return tensor
@@ -358,10 +368,8 @@ class Tensor(Value):
     def transpose(self, axes=None):
         return needle.ops.Transpose(axes)(self)
 
-
     __radd__ = __add__
     __rmul__ = __mul__
-
 
 
 def compute_gradient_of_variables(output_tensor, out_grad):
@@ -380,7 +388,22 @@ def compute_gradient_of_variables(output_tensor, out_grad):
     reverse_topo_order = list(reversed(find_topo_sort([output_tensor])))
 
     ### BEGIN YOUR SOLUTION
-    raise NotImplementedError()
+    for node in reverse_topo_order:
+        summed_grads = sum_node_list(node_to_output_grads_list[node])
+        node.grad = summed_grads
+        for input_node in enumerate(node.inputs):
+            if input_node not in node_to_output_grads_list:
+                if input_node not in node_to_output_grads_list:
+                    node_to_output_grads_list[input_node] = [summed_grads]
+                else:
+                    node_to_output_grads_list[input_node] = []
+        if not node.is_leaf():
+            grads = node.op.gradient_as_tuple(summed_grads, node)
+            for i, input_node in enumerate(node.inputs):
+                if input_node not in node_to_output_grads_list:
+                    node_to_output_grads_list[input_node] = [grads[i]]
+                else:
+                    node_to_output_grads_list[input_node].append(grads[i])
     ### END YOUR SOLUTION
 
 
@@ -393,14 +416,23 @@ def find_topo_sort(node_list: List[Value]) -> List[Value]:
     sort.
     """
     ### BEGIN YOUR SOLUTION
-    raise NotImplementedError()
+    topo_order = []
+    visited = set()
+    for node in node_list:
+        topo_sort_dfs(node, visited, topo_order)
+    return topo_order
     ### END YOUR SOLUTION
 
 
 def topo_sort_dfs(node, visited, topo_order):
     """Post-order DFS"""
     ### BEGIN YOUR SOLUTION
-    raise NotImplementedError()
+    if node in visited:
+        return
+    visited.add(node)
+    for input_node in node.inputs:
+        topo_sort_dfs(input_node, visited, topo_order)
+    topo_order.append(node)
     ### END YOUR SOLUTION
 
 
