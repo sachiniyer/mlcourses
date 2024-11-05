@@ -227,7 +227,10 @@ def broadcast_to(a, shape):
 
 class Summation(TensorOp):
     def __init__(self, axes: Optional[tuple] = None):
-        self.axes = axes
+        if axes is not None and not isinstance(axes, tuple):
+            self.axes = (axes,)
+        else:
+            self.axes = axes
 
     def compute(self, a):
         ### BEGIN YOUR SOLUTION
