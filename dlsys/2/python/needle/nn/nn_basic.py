@@ -162,12 +162,44 @@ class BatchNorm1d(Module):
         self.eps = eps
         self.momentum = momentum
         ### BEGIN YOUR SOLUTION
-        raise NotImplementedError()
+        self.weight = Parameter(
+            init.ones(dim, device=device, dtype=dtype, requires_grad=True)
+        )
+        self.bias = Parameter(
+            init.zeros(dim, device=device, dtype=dtype, requires_grad=True)
+        )
+        self.running_mean = init.zeros(
+            dim, device=device, dtype=dtype, requires_grad=False
+        )
+        self.running_var = init.ones(
+            dim, device=device, dtype=dtype, requires_grad=False
+        )
         ### END YOUR SOLUTION
 
     def forward(self, x: Tensor) -> Tensor:
         ### BEGIN YOUR SOLUTION
-        raise NotImplementedError()
+        if self.training:
+            ex = x.sum(0) / x.shape[0]
+            self.running_mean.data = (
+                1 - self.momentum
+            ) * self.running_mean.data + ex.data * self.momentum
+            ex = ops.broadcast_to(ex, x.shape)
+            sub = x - ex
+            var_x = ops.summation(sub * sub, axes=0) / x.shape[0]
+            self.running_var.data = (
+                1 - self.momentum
+            ) * self.running_var.data + var_x.data * self.momentum
+        else:
+            ex = ops.broadcast_to(self.running_mean, x.shape)  # batch_size, dim
+            var_x = self.running_var
+            sub = x - ex
+
+        y = (var_x + self.eps) ** 0.5
+        y = ops.broadcast_to(y, x.shape)
+        w = ops.broadcast_to(self.weight, x.shape)
+        b = ops.broadcast_to(self.bias, x.shape)
+        h = w * (sub / y) + b
+        return h
         ### END YOUR SOLUTION
 
 
@@ -205,7 +237,11 @@ class Dropout(Module):
 
     def forward(self, x: Tensor) -> Tensor:
         ### BEGIN YOUR SOLUTION
-        raise NotImplementedError()
+        # use init.randb
+        if self.training is False:
+            return x
+        mask = init.randb(*x.shape, p=1 - self.p)
+        return x * mask / (1 - self.p)
         ### END YOUR SOLUTION
 
 
@@ -216,5 +252,5 @@ class Residual(Module):
 
     def forward(self, x: Tensor) -> Tensor:
         ### BEGIN YOUR SOLUTION
-        raise NotImplementedError()
+        return x + self.fn(x)
         ### END YOUR SOLUTION
