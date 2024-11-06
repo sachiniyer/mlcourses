@@ -1,12 +1,13 @@
 import numpy as np
 
+
 class Transform:
     def __call__(self, x):
         raise NotImplementedError
 
 
 class RandomFlipHorizontal(Transform):
-    def __init__(self, p = 0.5):
+    def __init__(self, p=0.5):
         self.p = p
 
     def __call__(self, img):
@@ -20,7 +21,9 @@ class RandomFlipHorizontal(Transform):
         """
         flip_img = np.random.rand() < self.p
         ### BEGIN YOUR SOLUTION
-        raise NotImplementedError()
+        if flip_img:
+            img = np.fliplr(img)
+        return img
         ### END YOUR SOLUTION
 
 
@@ -29,14 +32,17 @@ class RandomCrop(Transform):
         self.padding = padding
 
     def __call__(self, img):
-        """ Zero pad and then randomly crop an image.
-        Args:
-             img: H x W x C NDArray of an image
-        Return 
-            H x W x C NAArray of cliped image
-        Note: generate the image shifted by shift_x, shift_y specified below
-        """
-        shift_x, shift_y = np.random.randint(low=-self.padding, high=self.padding+1, size=2)
+        shift_x, shift_y = np.random.randint(-self.padding, self.padding + 1, 2)
         ### BEGIN YOUR SOLUTION
-        raise NotImplementedError()
+        h, w, c = img.shape
+        padded_img = np.pad(
+            img,
+            ((self.padding, self.padding), (self.padding, self.padding), (0, 0)),
+            "constant",
+        )
+        return padded_img[
+            self.padding + shift_x : self.padding + shift_x + h,
+            self.padding + shift_y : self.padding + shift_y + w,
+            :,
+        ]
         ### END YOUR SOLUTION

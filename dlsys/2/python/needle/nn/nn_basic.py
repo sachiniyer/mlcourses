@@ -91,11 +91,7 @@ class Linear(Module):
         ### BEGIN YOUR SOLUTION
         self.weight = Parameter(
             init.kaiming_uniform(
-                fan_in=in_features,
-                fan_out=out_features,
-                device=device,
-                dtype=dtype,
-                requires_grad=True,
+                fan_in=in_features, fan_out=out_features, device=device, dtype=dtype
             )
         )
         if bias:
@@ -106,15 +102,15 @@ class Linear(Module):
                     device=device,
                     dtype=dtype,
                     requires_grad=True,
-                )
-            ).reshape((1, out_features))
+                ).reshape((1, out_features))
+            )
         ### END YOUR SOLUTION
 
     def forward(self, X: Tensor) -> Tensor:
         ### BEGIN YOUR SOLUTION
         res = X @ self.weight
-        if self.bias is not False and self.bias is not None:
-            return res + self.bias.broadcast_to(res.shape)
+        if self.bias is not None:
+            res = res + ops.broadcast_to(self.bias, res.shape)
         return res
         ### END YOUR SOLUTION
 
