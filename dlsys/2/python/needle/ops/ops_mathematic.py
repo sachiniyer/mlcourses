@@ -75,15 +75,15 @@ class EWisePow(TensorOp):
 
     def compute(self, a: NDArray, b: NDArray) -> NDArray:
         ### BEGIN YOUR SOLUTION
-        return array_api.power(a, b)
+        return array_api.power(a, b, dtype=a.dtype)
         ### END YOUR SOLUTION
 
     def gradient(self, out_grad, node):
         ### BEGIN YOUR SOLUTION
         lhs, rhs = node.inputs
-        return out_grad * (rhs * array_api.power(lhs, rhs - 1)), out_grad * (
-            log(lhs) * array_api.power(lhs, rhs)
-        )
+        return out_grad * (
+            rhs * array_api.power(lhs, rhs - 1, dtype - lhs.dtype)
+        ), out_grad * (log(lhs) * array_api.power(lhs, rhs))
         ### END YOUR SOLUTION
 
 
@@ -99,7 +99,7 @@ class PowerScalar(TensorOp):
 
     def compute(self, a: NDArray) -> NDArray:
         ### BEGIN YOUR SOLUTION
-        return array_api.power(a, self.scalar)
+        return array_api.power(a, self.scalar, dtype=a.dtype)
         ### END YOUR SOLUTION
 
     def gradient(self, out_grad, node):
@@ -290,7 +290,7 @@ def matmul(a, b):
 class Negate(TensorOp):
     def compute(self, a):
         ### BEGIN YOUR SOLUTION
-        return array_api.negative(a)
+        return array_api.negative(a, dtype=a.dtype)
         ### END YOUR SOLUTION
 
     def gradient(self, out_grad, node):

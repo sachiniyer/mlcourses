@@ -26,15 +26,15 @@ class SGD(Optimizer):
 
     def step(self):
         ### BEGIN YOUR SOLUTION
-        for w in self.params:
-            if w not in self.u.keys():
-                self.u[w] = ndl.init.zeros(
-                    *w.shape, device=w.device, dtype=w.dtype, requires_grad=False
+        for p in self.params:
+            if p not in self.u.keys():
+                self.u[p] = ndl.init.zeros(
+                    *p.shape, device=p.device, dtype=p.dtype, requires_grad=False
                 )
-            self.u[w] = self.momentum * self.u[w].data + (1.0 - self.momentum) * (
-                w.grad.data + self.weight_decay * w.data
+            self.u[p].data = self.u[p].data * self.momentum + (1.0 - self.momentum) * (
+                p.data * self.weight_decay + p.grad.data
             )
-            w.data = w.data - self.lr * self.u[w].data
+            p.data = p.data - self.lr * self.u[p].data
         ### END YOUR SOLUTION
 
     def clip_grad_norm(self, max_norm=0.25):
@@ -56,42 +56,43 @@ class Adam(Optimizer):
         eps=1e-8,
         weight_decay=0.0,
     ):
-        super().__init__(params)  # Initial parameter vector
-        self.lr = lr  # Learning rate
-        self.beta1 = beta1  # Exponential decay rate for the first moment estimates
-        self.beta2 = beta2  # Exponential decay rate for the second moment estimates
-        self.eps = eps  # A small constant for numerical stability
+        super().__init__(params)
+        self.lr = lr
+        self.beta1 = beta1
+        self.beta2 = beta2
+        self.eps = eps
         self.weight_decay = weight_decay
-        self.t = 0  # Initialize timestep
+        self.t = 0
 
-        self.m = {}  # Initialize first moment vector
-        self.v = {}  # Initialize second moment vector
+        self.m = {}
+        self.v = {}
 
     def step(self):
         ### BEGIN YOUR SOLUTION
-        self.t += 1
-        for w in self.params:
-            if w not in self.m.keys():
-                self.m[w] = ndl.init.zeros(
-                    *w.shape, device=w.device, dtype=w.dtype, requires_grad=False
+        self.t = self.t + 1
+        for p in self.params:
+            if p not in self.m:
+                self.m[p] = ndl.init.zeros_like(
+                    p.data, device=p.data.device, requires_grad=False
                 )
-                self.v[w] = ndl.init.zeros(
-                    *w.shape, device=w.device, dtype=w.dtype, requires_grad=False
+            if p not in self.v:
+                self.v[p] = ndl.init.zeros_like(
+                    p.data, device=p.data.device, requires_grad=False
                 )
-            l2_w = w.grad.data + self.weight_decay * w.data
-            self.m[w] = self.beta1 * self.m[w].data + (1.0 - self.beta1) * l2_w
-            self.v[w] = self.beta2 * self.v[w].data + (1.0 - self.beta2) * (l2_w * l2_w)
-            m_hat = (
-                self.m[w].data / (1.0 - self.beta1**self.t)
+            l2_p = p.grad.data + self.weight_decay * p.data
+            self.m[p].data = self.beta1 * self.m[p].data + (1 - self.beta1) * l2_p
+            self.v[p].data = self.beta2 * self.v[p].data + (1 - self.beta2) * (
+                l2_p * l2_p
+            )
+            m = (
+                self.m[p].data / (1 - self.beta1**self.t)
                 if self.t > 0
-                else self.m[w].data
+                else self.m[p].data
             )
-            v_hat = (
-                self.v[w].data / (1.0 - self.beta2**self.t)
+            v = (
+                self.v[p].data / (1 - self.beta2**self.t)
                 if self.t > 0
-                else self.v[w].data
+                else self.v[p].data
             )
-            w.data = w.data - self.lr * m_hat.data / (
-                ndl.ops.power_scalar(v_hat.data, 0.5) + self.eps
-            )
+            p.data = p.data - self.lr * m.data / (v.data**0.5 + self.eps)
         ### END YOUR SOLUTION
