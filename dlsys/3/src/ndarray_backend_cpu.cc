@@ -62,6 +62,7 @@ void Compact(const AlignedArray& a, AlignedArray* out, std::vector<int32_t> shap
    *  function will implement here, so we won't repeat this note.)
    */
   /// BEGIN SOLUTION
+  // want to be able to support any number of dimensions
   assert(false && "Not Implemented");
   /// END SOLUTION
 }
@@ -79,7 +80,7 @@ void EwiseSetitem(const AlignedArray& a, AlignedArray* out, std::vector<int32_t>
    *   offset: offset of the *out* array (not a, which has zero offset, being compact)
    */
   /// BEGIN SOLUTION
-  assert(false && "Not Implemented");
+  // assert(false && "Not Implemented");
   /// END SOLUTION
 }
 

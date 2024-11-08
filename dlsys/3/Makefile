@@ -5,7 +5,7 @@ all: lib
 
 lib:
 	@mkdir -p build
-	@cd build; cmake ..
+	@cd build; cmake -DCMAKE_CXX_COMPILER=/usr/bin/g++ -DCMAKE_C_COMPILER=/usr/bin/gcc ..
 	@cd build; $(MAKE)
 
 format:

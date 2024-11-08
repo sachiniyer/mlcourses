@@ -9,7 +9,7 @@ I will also only include the notebooks/exercises for the courses. The materials 
 - [x] 2
 - [ ] 3
 - [ ] 4
-- [ ] 4 bonus
+- [ ] 4 bonus (optional)
 
 ## [AISYS-fa2024](https://ucbsky.github.io/aisys-fa2024/schedule/)
 - [ ] 0

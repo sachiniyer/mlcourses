@@ -222,7 +222,11 @@ class NDArray:
         """Restride the matrix without copying memory."""
         assert len(shape) == len(strides)
         return NDArray.make(
-            shape, strides=strides, device=self.device, handle=self._handle, offset=self._offset
+            shape,
+            strides=strides,
+            device=self.device,
+            handle=self._handle,
+            offset=self._offset,
         )
 
     @property
@@ -247,7 +251,7 @@ class NDArray:
         """
 
         ### BEGIN YOUR SOLUTION
-        raise NotImplementedError()
+        return self.as_strided(new_shape, NDArray.compact_strides(new_shape))
         ### END YOUR SOLUTION
 
     def permute(self, new_axes):
@@ -272,7 +276,10 @@ class NDArray:
         """
 
         ### BEGIN YOUR SOLUTION
-        raise NotImplementedError()
+        return self.as_strided(
+            tuple([self.shape[i] for i in new_axes]),
+            tuple([self.strides[i] for i in new_axes]),
+        )
         ### END YOUR SOLUTION
 
     def broadcast_to(self, new_shape):
@@ -296,7 +303,12 @@ class NDArray:
         """
 
         ### BEGIN YOUR SOLUTION
-        raise NotImplementedError()
+        new_strides = list(self.strides)
+        for i, d in enumerate(self.shape):
+            assert d == 1 or new_shape[i] == d
+            if d==1:
+                new_strides[i] = 0
+        return self.as_strided(new_shape, tuple(new_strides))
         ### END YOUR SOLUTION
 
     ### Get and set elements
@@ -363,7 +375,14 @@ class NDArray:
         assert len(idxs) == self.ndim, "Need indexes equal to number of dimensions"
 
         ### BEGIN YOUR SOLUTION
-        raise NotImplementedError()
+        offset = 0
+        shape = list(self.shape)
+        strides = list(self.strides)
+        for i, s in enumerate(idxs):
+            offset += s.start * self.strides[i]
+            shape[i] = (s.stop - s.start) // s.step
+            strides[i] = s.step * self.strides[i]
+        return NDArray.make(tuple(shape), tuple(strides), self.device, self._handle, offset)
         ### END YOUR SOLUTION
 
     def __setitem__(self, idxs, other):
@@ -532,12 +551,11 @@ class NDArray:
 
     ### Reductions, i.e., sum/max over all element or over given axis
     def reduce_view_out(self, axis, keepdims=False):
-        """ Return a view to the array set up for reduction functions and output array. """
+        """Return a view to the array set up for reduction functions and output array."""
         if isinstance(axis, tuple) and not axis:
             raise ValueError("Empty axis in reduce")
         if axis is None:
             view = self.compact().reshape((1,) * (self.ndim - 1) + (prod(self.shape),))
-            #out = NDArray.make((1,) * self.ndim, device=self.device)
             out = NDArray.make((1,), device=self.device)
         else:
             if isinstance(axis, (tuple, list)):
@@ -547,9 +565,11 @@ class NDArray:
                 tuple([a for a in range(self.ndim) if a != axis]) + (axis,)
             )
             out = NDArray.make(
-                tuple([1 if i == axis else s for i, s in enumerate(self.shape)])
-                if keepdims else
-                tuple([s for i, s in enumerate(self.shape) if i != axis]),
+                (
+                    tuple([1 if i == axis else s for i, s in enumerate(self.shape)])
+                    if keepdims
+                    else tuple([s for i, s in enumerate(self.shape) if i != axis])
+                ),
                 device=self.device,
             )
         return view, out
@@ -558,11 +578,12 @@ class NDArray:
         view, out = self.reduce_view_out(axis, keepdims=keepdims)
         self.device.reduce_sum(view.compact()._handle, out._handle, view.shape[-1])
         return out
-        
+
     def max(self, axis=None, keepdims=False):
         view, out = self.reduce_view_out(axis, keepdims=keepdims)
         self.device.reduce_max(view.compact()._handle, out._handle, view.shape[-1])
         return out
+
 
 def array(a, dtype="float32", device=None):
     """Convenience methods to match numpy a bit more closely."""

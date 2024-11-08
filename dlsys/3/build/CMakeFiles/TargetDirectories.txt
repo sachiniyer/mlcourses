@@ -1,0 +1,4 @@
+/home/ubuntu/mlcourses/dlsys/3/build/CMakeFiles/ndarray_backend_cpu.dir
+/home/ubuntu/mlcourses/dlsys/3/build/CMakeFiles/ndarray_backend_cuda.dir
+/home/ubuntu/mlcourses/dlsys/3/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/mlcourses/dlsys/3/build/CMakeFiles/rebuild_cache.dir

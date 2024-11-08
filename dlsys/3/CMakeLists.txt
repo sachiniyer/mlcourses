@@ -56,6 +56,8 @@ endif()
 find_package(CUDA)
 if(CUDA_FOUND)
   message(STATUS "Found cuda, building cuda backend")
+  set(CMAKE_C_COMPILER "/usr/bin/gcc")    # Replace with path to your C compiler
+  set(CMAKE_CXX_COMPILER "/usr/bin/g++")  # Replace with path to your C++ compiler
 
   include_directories(SYSTEM ${CUDA_INCLUDE_DIRS})
   list(APPEND LINKER_LIBS ${CUDA_CUDART_LIBRARY})
