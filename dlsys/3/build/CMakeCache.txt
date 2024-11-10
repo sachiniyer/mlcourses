@@ -629,13 +629,13 @@ CUDA_run_nvcc:INTERNAL=/usr/share/cmake-3.28/Modules/FindCUDA/run_nvcc.cmake
 //Details about finding CUDA
 FIND_PACKAGE_MESSAGE_DETAILS_CUDA:INTERNAL=[/usr/local/cuda][/usr/local/cuda/bin/nvcc][/usr/local/cuda/include][/usr/local/cuda/lib64/libcudart_static.a][v12.4()]
 //Details about finding Python
-FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[/home/ubuntu/.pyenv/shims/python3][/usr/include/python3.12][/usr/lib/x86_64-linux-gnu/libpython3.12.so][cfound components: Development Interpreter Development.Module Development.Embed ][v3.12.3()]
+FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[/home/ubuntu/.pyenv/versions/ai/bin/python3][/usr/include/python3.12][/usr/lib/x86_64-linux-gnu/libpython3.12.so][cfound components: Development Interpreter Development.Module Development.Embed ][v3.12.3()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Test HAS_FLTO
 HAS_FLTO:INTERNAL=1
 //Python executable during the last CMake run
-PYBIND11_PYTHON_EXECUTABLE_LAST:INTERNAL=/home/ubuntu/.pyenv/shims/python3
+PYBIND11_PYTHON_EXECUTABLE_LAST:INTERNAL=/home/ubuntu/.pyenv/versions/ai/bin/python3
 //Python debug status
 PYTHON_IS_DEBUG:INTERNAL=0
 PYTHON_MODULE_DEBUG_POSTFIX:INTERNAL=
@@ -646,17 +646,17 @@ _PYBIND11_CROSSCOMPILING:INTERNAL=OFF
 _Python:INTERNAL=Python
 //Compiler reason failure
 _Python_Compiler_REASON_FAILURE:INTERNAL=
-_Python_DEVELOPMENT_EMBED_SIGNATURE:INTERNAL=30e5e190aa43b60d034710c8e4b5bc77
-_Python_DEVELOPMENT_MODULE_SIGNATURE:INTERNAL=3fb160f35f30a9e49a58b16f4a5af3ad
+_Python_DEVELOPMENT_EMBED_SIGNATURE:INTERNAL=89bca87046b4bd3d8e7d1ec8b4593878
+_Python_DEVELOPMENT_MODULE_SIGNATURE:INTERNAL=2be59641e7b97c65e7bf29c5e7b21a7a
 //Development reason failure
 _Python_Development_REASON_FAILURE:INTERNAL=
 //Path to a program.
-_Python_EXECUTABLE:INTERNAL=/home/ubuntu/.pyenv/shims/python3
+_Python_EXECUTABLE:INTERNAL=/home/ubuntu/.pyenv/versions/ai/bin/python3
 //Path to a file.
 _Python_INCLUDE_DIR:INTERNAL=/usr/include/python3.12
 //Python Properties
-_Python_INTERPRETER_PROPERTIES:INTERNAL=Python;3;12;3;64;;cpython-312-x86_64-linux-gnu;abi3;/usr/lib/python3.12;/usr/lib/python3.12;/usr/local/lib/python3.12/dist-packages;/usr/local/lib/python3.12/dist-packages
-_Python_INTERPRETER_SIGNATURE:INTERNAL=20a62bdbfa816c5b8336ba9ee5cb290e
+_Python_INTERPRETER_PROPERTIES:INTERNAL=Python;3;12;3;64;;cpython-312-x86_64-linux-gnu;abi3;/usr/lib/python3.12;/home/ubuntu/.pyenv/versions/ai/lib/python3.12;/home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages;/home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages
+_Python_INTERPRETER_SIGNATURE:INTERNAL=eba63ede60973610a70f5f2bdbc29870
 //Interpreter reason failure
 _Python_Interpreter_REASON_FAILURE:INTERNAL=
 //Path to a library.

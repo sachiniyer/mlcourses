@@ -7,7 +7,7 @@ I will also only include the notebooks/exercises for the courses. The materials 
 - [x] 0
 - [x] 1
 - [x] 2
-- [ ] 3
+- [x] 3
 - [ ] 4
 - [ ] 4 bonus (optional)
 
