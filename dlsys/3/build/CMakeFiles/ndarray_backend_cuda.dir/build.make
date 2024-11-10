@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/mlcourses/dlsys/3
+CMAKE_SOURCE_DIR = /home/ubuntu/dlsys/3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/mlcourses/dlsys/3/build
+CMAKE_BINARY_DIR = /home/ubuntu/dlsys/3/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ndarray_backend_cuda.dir/depend.make
@@ -69,141 +69,30 @@ include CMakeFiles/ndarray_backend_cuda.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/ndarray_backend_cuda.dir/flags.make
 
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/mlcourses/dlsys/3/src/ndarray_backend_cuda.cu
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/Python.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/abstract.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/bltinmodule.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/boolobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/bytearrayobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/bytesobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/ceval.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/codecs.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/compile.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/complexobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/abstract.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/bytearrayobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/bytesobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/cellobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/ceval.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/classobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/code.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/compile.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/complexobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/context.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/descrobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/dictobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/fileobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/fileutils.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/floatobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/frameobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/funcobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/genobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/import.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/initconfig.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/listobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/longintrepr.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/longobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/memoryobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/methodobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/modsupport.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/object.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/objimpl.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/odictobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/picklebufobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/pyctype.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/pydebug.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/pyerrors.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/pyfpe.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/pyframe.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/pylifecycle.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/pymem.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/pystate.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/pythonrun.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/pythread.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/pytime.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/setobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/sysmodule.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/traceback.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/tupleobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/unicodeobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/warnings.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/cpython/weakrefobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/descrobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/dictobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/enumobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/exports.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/fileobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/fileutils.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/floatobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/frameobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/genericaliasobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/import.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/intrcheck.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/iterobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/listobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/longobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/memoryobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/methodobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/modsupport.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/moduleobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/object.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/objimpl.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/osmodule.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/patchlevel.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/pybuffer.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/pycapsule.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/pyconfig.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/pyerrors.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/pyframe.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/pyhash.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/pylifecycle.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/pymacconfig.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/pymacro.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/pymath.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/pymem.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/pyport.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/pystate.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/pystats.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/pystrcmp.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/pystrtod.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/pythonrun.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/pythread.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/pytypedefs.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/rangeobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/setobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/sliceobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/structseq.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/sysmodule.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/traceback.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/tracemalloc.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/tupleobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/typeslots.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/unicodeobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/warnings.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/include/python3.12/weakrefobject.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/attr.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/buffer_info.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/cast.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/complex.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/detail/class.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/detail/common.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/detail/cpp_conduit.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/detail/descr.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/detail/exception_translation.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/detail/init.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/detail/internals.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/detail/type_caster_base.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/detail/typeid.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/detail/value_and_holder.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/gil.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/gil_safe_call_once.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/numpy.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/options.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/pybind11.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/pytypes.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/stl.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/typing.h
-CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/mlcourses/dlsys/3/src/ndarray_backend_cuda.cu
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/dlsys/3/src/ndarray_backend_cuda.cu
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/attr.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/buffer_info.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/cast.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/complex.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/detail/class.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/detail/common.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/detail/cpp_conduit.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/detail/descr.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/detail/exception_translation.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/detail/init.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/detail/internals.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/detail/type_caster_base.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/detail/typeid.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/detail/value_and_holder.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/gil.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/gil_safe_call_once.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/numpy.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/options.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/pybind11.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/pytypes.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/stl.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/typing.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /home/ubuntu/dlsys/3/src/ndarray_backend_cuda.cu
 CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/alloca.h
 CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/asm-generic/bitsperlong.h
 CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/asm-generic/errno-base.h
@@ -403,6 +292,117 @@ CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_b
 CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/locale.h
 CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/math.h
 CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/pthread.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/Python.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/abstract.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/bltinmodule.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/boolobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/bytearrayobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/bytesobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/ceval.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/codecs.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/compile.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/complexobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/abstract.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/bytearrayobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/bytesobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/cellobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/ceval.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/classobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/code.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/compile.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/complexobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/context.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/descrobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/dictobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/fileobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/fileutils.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/floatobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/frameobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/funcobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/genobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/import.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/initconfig.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/listobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/longintrepr.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/longobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/memoryobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/methodobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/modsupport.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/object.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/objimpl.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/odictobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/picklebufobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/pyctype.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/pydebug.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/pyerrors.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/pyfpe.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/pyframe.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/pylifecycle.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/pymem.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/pystate.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/pythonrun.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/pythread.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/pytime.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/setobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/sysmodule.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/traceback.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/tupleobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/unicodeobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/warnings.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/cpython/weakrefobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/descrobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/dictobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/enumobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/exports.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/fileobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/fileutils.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/floatobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/frameobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/genericaliasobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/import.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/intrcheck.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/iterobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/listobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/longobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/memoryobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/methodobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/modsupport.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/moduleobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/object.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/objimpl.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/osmodule.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/patchlevel.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/pybuffer.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/pycapsule.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/pyconfig.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/pyerrors.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/pyframe.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/pyhash.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/pylifecycle.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/pymacconfig.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/pymacro.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/pymath.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/pymem.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/pyport.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/pystate.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/pystats.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/pystrcmp.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/pystrtod.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/pythonrun.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/pythread.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/pytypedefs.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/rangeobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/setobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/sliceobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/structseq.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/sysmodule.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/traceback.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/tracemalloc.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/tupleobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/typeslots.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/unicodeobject.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/warnings.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/python3.12/weakrefobject.h
 CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/sched.h
 CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/stdc-predef.h
 CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/stdint.h
@@ -533,6 +533,7 @@ CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_b
 CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h
 CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/x86_64-linux-gnu/gnu/stubs-64.h
 CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/x86_64-linux-gnu/gnu/stubs.h
+CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/x86_64-linux-gnu/python3.12/pyconfig.h
 CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/x86_64-linux-gnu/sys/cdefs.h
 CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/x86_64-linux-gnu/sys/select.h
 CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/include/x86_64-linux-gnu/sys/single_threaded.h
@@ -596,29 +597,29 @@ CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_b
 CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/local/cuda/include/vector_functions.hpp
 CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: /usr/local/cuda/include/vector_types.h
 CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o: CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o.cmake
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/ubuntu/mlcourses/dlsys/3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building NVCC (Device) object CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o"
-	cd /home/ubuntu/mlcourses/dlsys/3/build/CMakeFiles/ndarray_backend_cuda.dir/src && /usr/bin/cmake -E make_directory /home/ubuntu/mlcourses/dlsys/3/build/CMakeFiles/ndarray_backend_cuda.dir/src/.
-	cd /home/ubuntu/mlcourses/dlsys/3/build/CMakeFiles/ndarray_backend_cuda.dir/src && /usr/bin/cmake -D verbose:BOOL=$(VERBOSE) -D build_configuration:STRING= -D generated_file:STRING=/home/ubuntu/mlcourses/dlsys/3/build/CMakeFiles/ndarray_backend_cuda.dir/src/./ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o -D generated_cubin_file:STRING=/home/ubuntu/mlcourses/dlsys/3/build/CMakeFiles/ndarray_backend_cuda.dir/src/./ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o.cubin.txt -P /home/ubuntu/mlcourses/dlsys/3/build/CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o.cmake
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/ubuntu/dlsys/3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building NVCC (Device) object CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o"
+	cd /home/ubuntu/dlsys/3/build/CMakeFiles/ndarray_backend_cuda.dir/src && /usr/bin/cmake -E make_directory /home/ubuntu/dlsys/3/build/CMakeFiles/ndarray_backend_cuda.dir/src/.
+	cd /home/ubuntu/dlsys/3/build/CMakeFiles/ndarray_backend_cuda.dir/src && /usr/bin/cmake -D verbose:BOOL=$(VERBOSE) -D build_configuration:STRING= -D generated_file:STRING=/home/ubuntu/dlsys/3/build/CMakeFiles/ndarray_backend_cuda.dir/src/./ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o -D generated_cubin_file:STRING=/home/ubuntu/dlsys/3/build/CMakeFiles/ndarray_backend_cuda.dir/src/./ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o.cubin.txt -P /home/ubuntu/dlsys/3/build/CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o.cmake
 
 # Object files for target ndarray_backend_cuda
 ndarray_backend_cuda_OBJECTS =
 
 # External object files for target ndarray_backend_cuda
 ndarray_backend_cuda_EXTERNAL_OBJECTS = \
-"/home/ubuntu/mlcourses/dlsys/3/build/CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o"
+"/home/ubuntu/dlsys/3/build/CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o"
 
-/home/ubuntu/mlcourses/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cuda.cpython-312-x86_64-linux-gnu.so: CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o
-/home/ubuntu/mlcourses/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cuda.cpython-312-x86_64-linux-gnu.so: CMakeFiles/ndarray_backend_cuda.dir/build.make
-/home/ubuntu/mlcourses/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cuda.cpython-312-x86_64-linux-gnu.so: /usr/local/cuda/lib64/libcudart_static.a
-/home/ubuntu/mlcourses/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cuda.cpython-312-x86_64-linux-gnu.so: /usr/lib/x86_64-linux-gnu/librt.a
-/home/ubuntu/mlcourses/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cuda.cpython-312-x86_64-linux-gnu.so: /usr/local/cuda/lib64/libcudart.so
-/home/ubuntu/mlcourses/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cuda.cpython-312-x86_64-linux-gnu.so: CMakeFiles/ndarray_backend_cuda.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ubuntu/mlcourses/dlsys/3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared module /home/ubuntu/mlcourses/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cuda.cpython-312-x86_64-linux-gnu.so"
+/home/ubuntu/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cuda.cpython-312-x86_64-linux-gnu.so: CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o
+/home/ubuntu/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cuda.cpython-312-x86_64-linux-gnu.so: CMakeFiles/ndarray_backend_cuda.dir/build.make
+/home/ubuntu/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cuda.cpython-312-x86_64-linux-gnu.so: /usr/local/cuda/lib64/libcudart_static.a
+/home/ubuntu/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cuda.cpython-312-x86_64-linux-gnu.so: /usr/lib/x86_64-linux-gnu/librt.a
+/home/ubuntu/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cuda.cpython-312-x86_64-linux-gnu.so: /usr/local/cuda/lib64/libcudart.so
+/home/ubuntu/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cuda.cpython-312-x86_64-linux-gnu.so: CMakeFiles/ndarray_backend_cuda.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ubuntu/dlsys/3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared module /home/ubuntu/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cuda.cpython-312-x86_64-linux-gnu.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ndarray_backend_cuda.dir/link.txt --verbose=$(VERBOSE)
-	/usr/bin/strip /home/ubuntu/mlcourses/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cuda.cpython-312-x86_64-linux-gnu.so
+	/usr/bin/strip /home/ubuntu/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cuda.cpython-312-x86_64-linux-gnu.so
 
 # Rule to build all files generated by this target.
-CMakeFiles/ndarray_backend_cuda.dir/build: /home/ubuntu/mlcourses/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cuda.cpython-312-x86_64-linux-gnu.so
+CMakeFiles/ndarray_backend_cuda.dir/build: /home/ubuntu/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cuda.cpython-312-x86_64-linux-gnu.so
 .PHONY : CMakeFiles/ndarray_backend_cuda.dir/build
 
 CMakeFiles/ndarray_backend_cuda.dir/clean:
@@ -626,6 +627,6 @@ CMakeFiles/ndarray_backend_cuda.dir/clean:
 .PHONY : CMakeFiles/ndarray_backend_cuda.dir/clean
 
 CMakeFiles/ndarray_backend_cuda.dir/depend: CMakeFiles/ndarray_backend_cuda.dir/src/ndarray_backend_cuda_generated_ndarray_backend_cuda.cu.o
-	cd /home/ubuntu/mlcourses/dlsys/3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/mlcourses/dlsys/3 /home/ubuntu/mlcourses/dlsys/3 /home/ubuntu/mlcourses/dlsys/3/build /home/ubuntu/mlcourses/dlsys/3/build /home/ubuntu/mlcourses/dlsys/3/build/CMakeFiles/ndarray_backend_cuda.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/ubuntu/dlsys/3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/dlsys/3 /home/ubuntu/dlsys/3 /home/ubuntu/dlsys/3/build /home/ubuntu/dlsys/3/build /home/ubuntu/dlsys/3/build/CMakeFiles/ndarray_backend_cuda.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/ndarray_backend_cuda.dir/depend
 

@@ -380,9 +380,9 @@ class NDArray:
         strides = list(self.strides)
         for i, s in enumerate(idxs):
             offset += s.start * self.strides[i]
-            shape[i] = (s.stop - s.start) // s.step
+            shape[i] = (s.stop - s.start-1) // s.step+1
             strides[i] = s.step * self.strides[i]
-        return NDArray.make(tuple(shape), tuple(strides), self.device, self._handle, offset)
+        return self.make(tuple(shape), tuple(strides), self.device, self._handle, offset)
         ### END YOUR SOLUTION
 
     def __setitem__(self, idxs, other):

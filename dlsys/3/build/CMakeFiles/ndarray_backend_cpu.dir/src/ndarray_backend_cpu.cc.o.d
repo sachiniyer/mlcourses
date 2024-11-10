@@ -1,16 +1,16 @@
 CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.o: \
- /home/ubuntu/mlcourses/dlsys/3/src/ndarray_backend_cpu.cc \
+ /home/ubuntu/dlsys/3/src/ndarray_backend_cpu.cc \
  /usr/include/stdc-predef.h \
- /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/numpy.h \
- /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/pybind11.h \
- /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/detail/class.h \
- /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/attr.h \
- /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/detail/common.h \
- /home/ubuntu/miniconda3/include/python3.12/Python.h \
- /home/ubuntu/miniconda3/include/python3.12/patchlevel.h \
- /home/ubuntu/miniconda3/include/python3.12/pyconfig.h \
- /home/ubuntu/miniconda3/include/python3.12/pymacconfig.h \
- /usr/include/c++/13/stdlib.h /usr/include/c++/13/cstdlib \
+ /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/numpy.h \
+ /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/pybind11.h \
+ /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/detail/class.h \
+ /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/attr.h \
+ /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/detail/common.h \
+ /usr/include/python3.12/Python.h /usr/include/python3.12/patchlevel.h \
+ /usr/include/python3.12/pyconfig.h \
+ /usr/include/x86_64-linux-gnu/python3.12/pyconfig.h \
+ /usr/include/python3.12/pymacconfig.h /usr/include/c++/13/stdlib.h \
+ /usr/include/c++/13/cstdlib \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -94,8 +94,7 @@ CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.o: \
  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
  /usr/include/x86_64-linux-gnu/bits/wchar2-decl.h \
  /usr/include/x86_64-linux-gnu/bits/wchar2.h \
- /home/ubuntu/miniconda3/include/python3.12/pyport.h \
- /usr/include/inttypes.h \
+ /usr/include/python3.12/pyport.h /usr/include/inttypes.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
@@ -140,122 +139,109 @@ CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.o: \
  /usr/include/x86_64-linux-gnu/bits/statx-generic.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_statx.h \
- /home/ubuntu/miniconda3/include/python3.12/exports.h \
- /home/ubuntu/miniconda3/include/python3.12/pymacro.h \
- /home/ubuntu/miniconda3/include/python3.12/pymath.h \
- /home/ubuntu/miniconda3/include/python3.12/pymem.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/pymem.h \
- /home/ubuntu/miniconda3/include/python3.12/pytypedefs.h \
- /home/ubuntu/miniconda3/include/python3.12/pybuffer.h \
- /home/ubuntu/miniconda3/include/python3.12/object.h \
- /home/ubuntu/miniconda3/include/python3.12/pystats.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/object.h \
- /home/ubuntu/miniconda3/include/python3.12/objimpl.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/objimpl.h \
- /home/ubuntu/miniconda3/include/python3.12/typeslots.h \
- /home/ubuntu/miniconda3/include/python3.12/pyhash.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/pydebug.h \
- /home/ubuntu/miniconda3/include/python3.12/bytearrayobject.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/bytearrayobject.h \
- /home/ubuntu/miniconda3/include/python3.12/bytesobject.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/bytesobject.h \
- /home/ubuntu/miniconda3/include/python3.12/unicodeobject.h \
- /usr/include/ctype.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/unicodeobject.h \
- /home/ubuntu/miniconda3/include/python3.12/longobject.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/longobject.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/longintrepr.h \
- /home/ubuntu/miniconda3/include/python3.12/boolobject.h \
- /home/ubuntu/miniconda3/include/python3.12/floatobject.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/floatobject.h \
- /home/ubuntu/miniconda3/include/python3.12/complexobject.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/complexobject.h \
- /home/ubuntu/miniconda3/include/python3.12/rangeobject.h \
- /home/ubuntu/miniconda3/include/python3.12/memoryobject.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/memoryobject.h \
- /home/ubuntu/miniconda3/include/python3.12/tupleobject.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/tupleobject.h \
- /home/ubuntu/miniconda3/include/python3.12/listobject.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/listobject.h \
- /home/ubuntu/miniconda3/include/python3.12/dictobject.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/dictobject.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/odictobject.h \
- /home/ubuntu/miniconda3/include/python3.12/enumobject.h \
- /home/ubuntu/miniconda3/include/python3.12/setobject.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/setobject.h \
- /home/ubuntu/miniconda3/include/python3.12/methodobject.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/methodobject.h \
- /home/ubuntu/miniconda3/include/python3.12/moduleobject.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/funcobject.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/classobject.h \
- /home/ubuntu/miniconda3/include/python3.12/fileobject.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/fileobject.h \
- /home/ubuntu/miniconda3/include/python3.12/pycapsule.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/code.h \
- /home/ubuntu/miniconda3/include/python3.12/pyframe.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/pyframe.h \
- /home/ubuntu/miniconda3/include/python3.12/traceback.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/traceback.h \
- /home/ubuntu/miniconda3/include/python3.12/sliceobject.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/cellobject.h \
- /home/ubuntu/miniconda3/include/python3.12/iterobject.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/initconfig.h \
- /home/ubuntu/miniconda3/include/python3.12/pystate.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/pystate.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/genobject.h \
- /home/ubuntu/miniconda3/include/python3.12/descrobject.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/descrobject.h \
- /home/ubuntu/miniconda3/include/python3.12/genericaliasobject.h \
- /home/ubuntu/miniconda3/include/python3.12/warnings.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/warnings.h \
- /home/ubuntu/miniconda3/include/python3.12/weakrefobject.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/weakrefobject.h \
- /home/ubuntu/miniconda3/include/python3.12/structseq.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/picklebufobject.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/pytime.h \
- /home/ubuntu/miniconda3/include/python3.12/codecs.h \
- /home/ubuntu/miniconda3/include/python3.12/pyerrors.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/pyerrors.h \
- /home/ubuntu/miniconda3/include/python3.12/pythread.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/pythread.h \
- /usr/include/pthread.h /usr/include/sched.h \
- /usr/include/x86_64-linux-gnu/bits/sched.h \
+ /usr/include/python3.12/exports.h /usr/include/python3.12/pymacro.h \
+ /usr/include/python3.12/pymath.h /usr/include/python3.12/pymem.h \
+ /usr/include/python3.12/cpython/pymem.h \
+ /usr/include/python3.12/pytypedefs.h /usr/include/python3.12/pybuffer.h \
+ /usr/include/python3.12/object.h /usr/include/python3.12/pystats.h \
+ /usr/include/python3.12/cpython/object.h \
+ /usr/include/python3.12/objimpl.h \
+ /usr/include/python3.12/cpython/objimpl.h \
+ /usr/include/python3.12/typeslots.h /usr/include/python3.12/pyhash.h \
+ /usr/include/python3.12/cpython/pydebug.h \
+ /usr/include/python3.12/bytearrayobject.h \
+ /usr/include/python3.12/cpython/bytearrayobject.h \
+ /usr/include/python3.12/bytesobject.h \
+ /usr/include/python3.12/cpython/bytesobject.h \
+ /usr/include/python3.12/unicodeobject.h /usr/include/ctype.h \
+ /usr/include/python3.12/cpython/unicodeobject.h \
+ /usr/include/python3.12/cpython/initconfig.h \
+ /usr/include/python3.12/pystate.h \
+ /usr/include/python3.12/cpython/pystate.h \
+ /usr/include/python3.12/pyerrors.h \
+ /usr/include/python3.12/cpython/pyerrors.h \
+ /usr/include/python3.12/longobject.h \
+ /usr/include/python3.12/cpython/longobject.h \
+ /usr/include/python3.12/cpython/longintrepr.h \
+ /usr/include/python3.12/boolobject.h \
+ /usr/include/python3.12/floatobject.h \
+ /usr/include/python3.12/cpython/floatobject.h \
+ /usr/include/python3.12/complexobject.h \
+ /usr/include/python3.12/cpython/complexobject.h \
+ /usr/include/python3.12/rangeobject.h \
+ /usr/include/python3.12/memoryobject.h \
+ /usr/include/python3.12/cpython/memoryobject.h \
+ /usr/include/python3.12/tupleobject.h \
+ /usr/include/python3.12/cpython/tupleobject.h \
+ /usr/include/python3.12/listobject.h \
+ /usr/include/python3.12/cpython/listobject.h \
+ /usr/include/python3.12/dictobject.h \
+ /usr/include/python3.12/cpython/dictobject.h \
+ /usr/include/python3.12/cpython/odictobject.h \
+ /usr/include/python3.12/enumobject.h /usr/include/python3.12/setobject.h \
+ /usr/include/python3.12/cpython/setobject.h \
+ /usr/include/python3.12/methodobject.h \
+ /usr/include/python3.12/cpython/methodobject.h \
+ /usr/include/python3.12/moduleobject.h \
+ /usr/include/python3.12/cpython/funcobject.h \
+ /usr/include/python3.12/cpython/classobject.h \
+ /usr/include/python3.12/fileobject.h \
+ /usr/include/python3.12/cpython/fileobject.h \
+ /usr/include/python3.12/pycapsule.h \
+ /usr/include/python3.12/cpython/code.h /usr/include/python3.12/pyframe.h \
+ /usr/include/python3.12/cpython/pyframe.h \
+ /usr/include/python3.12/traceback.h \
+ /usr/include/python3.12/cpython/traceback.h \
+ /usr/include/python3.12/sliceobject.h \
+ /usr/include/python3.12/cpython/cellobject.h \
+ /usr/include/python3.12/iterobject.h \
+ /usr/include/python3.12/cpython/genobject.h \
+ /usr/include/python3.12/descrobject.h \
+ /usr/include/python3.12/cpython/descrobject.h \
+ /usr/include/python3.12/genericaliasobject.h \
+ /usr/include/python3.12/warnings.h \
+ /usr/include/python3.12/cpython/warnings.h \
+ /usr/include/python3.12/weakrefobject.h \
+ /usr/include/python3.12/cpython/weakrefobject.h \
+ /usr/include/python3.12/structseq.h \
+ /usr/include/python3.12/cpython/picklebufobject.h \
+ /usr/include/python3.12/cpython/pytime.h \
+ /usr/include/python3.12/codecs.h /usr/include/python3.12/pythread.h \
+ /usr/include/python3.12/cpython/pythread.h /usr/include/pthread.h \
+ /usr/include/sched.h /usr/include/x86_64-linux-gnu/bits/sched.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
  /usr/include/x86_64-linux-gnu/bits/cpu-set.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/context.h \
- /home/ubuntu/miniconda3/include/python3.12/modsupport.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/modsupport.h \
- /home/ubuntu/miniconda3/include/python3.12/compile.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/compile.h \
- /home/ubuntu/miniconda3/include/python3.12/pythonrun.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/pythonrun.h \
- /home/ubuntu/miniconda3/include/python3.12/pylifecycle.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/pylifecycle.h \
- /home/ubuntu/miniconda3/include/python3.12/ceval.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/ceval.h \
- /home/ubuntu/miniconda3/include/python3.12/sysmodule.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/sysmodule.h \
- /home/ubuntu/miniconda3/include/python3.12/osmodule.h \
- /home/ubuntu/miniconda3/include/python3.12/intrcheck.h \
- /home/ubuntu/miniconda3/include/python3.12/import.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/import.h \
- /home/ubuntu/miniconda3/include/python3.12/abstract.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/abstract.h \
- /home/ubuntu/miniconda3/include/python3.12/bltinmodule.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/pyctype.h \
- /home/ubuntu/miniconda3/include/python3.12/pystrtod.h \
- /home/ubuntu/miniconda3/include/python3.12/pystrcmp.h \
- /home/ubuntu/miniconda3/include/python3.12/fileutils.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/fileutils.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/pyfpe.h \
- /home/ubuntu/miniconda3/include/python3.12/tracemalloc.h \
- /home/ubuntu/miniconda3/include/python3.12/frameobject.h \
- /home/ubuntu/miniconda3/include/python3.12/cpython/frameobject.h \
- /home/ubuntu/miniconda3/include/python3.12/pythread.h \
- /usr/include/c++/13/cstddef /usr/include/c++/13/cstring \
- /usr/include/c++/13/exception /usr/include/c++/13/bits/exception.h \
+ /usr/include/python3.12/cpython/context.h \
+ /usr/include/python3.12/modsupport.h \
+ /usr/include/python3.12/cpython/modsupport.h \
+ /usr/include/python3.12/compile.h \
+ /usr/include/python3.12/cpython/compile.h \
+ /usr/include/python3.12/pythonrun.h \
+ /usr/include/python3.12/cpython/pythonrun.h \
+ /usr/include/python3.12/pylifecycle.h \
+ /usr/include/python3.12/cpython/pylifecycle.h \
+ /usr/include/python3.12/ceval.h /usr/include/python3.12/cpython/ceval.h \
+ /usr/include/python3.12/sysmodule.h \
+ /usr/include/python3.12/cpython/sysmodule.h \
+ /usr/include/python3.12/osmodule.h /usr/include/python3.12/intrcheck.h \
+ /usr/include/python3.12/import.h \
+ /usr/include/python3.12/cpython/import.h \
+ /usr/include/python3.12/abstract.h \
+ /usr/include/python3.12/cpython/abstract.h \
+ /usr/include/python3.12/bltinmodule.h \
+ /usr/include/python3.12/cpython/pyctype.h \
+ /usr/include/python3.12/pystrtod.h /usr/include/python3.12/pystrcmp.h \
+ /usr/include/python3.12/fileutils.h \
+ /usr/include/python3.12/cpython/fileutils.h \
+ /usr/include/python3.12/cpython/pyfpe.h \
+ /usr/include/python3.12/tracemalloc.h \
+ /usr/include/python3.12/frameobject.h \
+ /usr/include/python3.12/cpython/frameobject.h \
+ /usr/include/python3.12/pythread.h /usr/include/c++/13/cstddef \
+ /usr/include/c++/13/cstring /usr/include/c++/13/exception \
+ /usr/include/c++/13/bits/exception.h \
  /usr/include/c++/13/bits/exception_ptr.h \
  /usr/include/c++/13/bits/exception_defines.h \
  /usr/include/c++/13/bits/cxxabi_init_exception.h \
@@ -331,11 +317,11 @@ CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.o: \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc /usr/include/c++/13/version \
- /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/cast.h \
- /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/detail/descr.h \
- /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/detail/type_caster_base.h \
- /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/pytypes.h \
- /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/buffer_info.h \
+ /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/cast.h \
+ /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/detail/descr.h \
+ /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/detail/type_caster_base.h \
+ /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/pytypes.h \
+ /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/buffer_info.h \
  /usr/include/c++/13/iterator /usr/include/c++/13/bits/stream_iterator.h \
  /usr/include/c++/13/bits/streambuf_iterator.h \
  /usr/include/c++/13/streambuf /usr/include/c++/13/bits/ios_base.h \
@@ -345,8 +331,8 @@ CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.o: \
  /usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h \
  /usr/include/c++/13/bits/streambuf.tcc /usr/include/c++/13/utility \
  /usr/include/c++/13/bits/stl_relops.h \
- /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/detail/cpp_conduit.h \
- /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/detail/internals.h \
+ /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/detail/cpp_conduit.h \
+ /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/detail/internals.h \
  /usr/include/c++/13/mutex /usr/include/c++/13/bits/chrono.h \
  /usr/include/c++/13/ratio /usr/include/c++/13/cstdint \
  /usr/include/c++/13/limits /usr/include/c++/13/ctime \
@@ -355,24 +341,24 @@ CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.o: \
  /usr/include/c++/13/bits/unique_lock.h /usr/include/c++/13/thread \
  /usr/include/c++/13/bits/std_thread.h \
  /usr/include/c++/13/bits/this_thread_sleep.h \
- /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/detail/typeid.h \
+ /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/detail/typeid.h \
  /usr/include/c++/13/cxxabi.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/cxxabi_tweaks.h \
- /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/detail/value_and_holder.h \
+ /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/detail/value_and_holder.h \
  /usr/include/c++/13/array /usr/include/c++/13/compare \
  /usr/include/c++/13/functional /usr/include/c++/13/bits/std_function.h \
- /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/options.h \
- /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/detail/exception_translation.h \
- /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/detail/init.h \
- /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/gil.h \
+ /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/options.h \
+ /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/detail/exception_translation.h \
+ /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/detail/init.h \
+ /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/gil.h \
  /usr/include/c++/13/cassert \
- /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/gil_safe_call_once.h \
- /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/typing.h \
+ /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/gil_safe_call_once.h \
+ /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/typing.h \
  /usr/include/c++/13/algorithm /usr/include/c++/13/bits/stl_algo.h \
  /usr/include/c++/13/bits/algorithmfwd.h \
  /usr/include/c++/13/bits/stl_heap.h \
  /usr/include/c++/13/bits/uniform_int_dist.h \
- /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/complex.h \
+ /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/complex.h \
  /usr/include/c++/13/complex /usr/include/c++/13/sstream \
  /usr/include/c++/13/istream /usr/include/c++/13/ios \
  /usr/include/c++/13/bits/basic_ios.h \
@@ -386,7 +372,7 @@ CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.o: \
  /usr/include/c++/13/bits/istream.tcc \
  /usr/include/c++/13/bits/sstream.tcc /usr/include/c++/13/numeric \
  /usr/include/c++/13/bits/stl_numeric.h \
- /home/ubuntu/miniconda3/lib/python3.12/site-packages/pybind11/include/pybind11/stl.h \
+ /home/ubuntu/.pyenv/versions/ai/lib/python3.12/site-packages/pybind11/include/pybind11/stl.h \
  /usr/include/c++/13/deque /usr/include/c++/13/bits/stl_deque.h \
  /usr/include/c++/13/bits/deque.tcc /usr/include/c++/13/list \
  /usr/include/c++/13/bits/stl_list.h /usr/include/c++/13/bits/list.tcc \

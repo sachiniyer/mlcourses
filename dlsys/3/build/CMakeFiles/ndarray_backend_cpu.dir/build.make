@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/mlcourses/dlsys/3
+CMAKE_SOURCE_DIR = /home/ubuntu/dlsys/3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/mlcourses/dlsys/3/build
+CMAKE_BINARY_DIR = /home/ubuntu/dlsys/3/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ndarray_backend_cpu.dir/depend.make
@@ -70,18 +70,18 @@ include CMakeFiles/ndarray_backend_cpu.dir/progress.make
 include CMakeFiles/ndarray_backend_cpu.dir/flags.make
 
 CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.o: CMakeFiles/ndarray_backend_cpu.dir/flags.make
-CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.o: /home/ubuntu/mlcourses/dlsys/3/src/ndarray_backend_cpu.cc
+CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.o: /home/ubuntu/dlsys/3/src/ndarray_backend_cpu.cc
 CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.o: CMakeFiles/ndarray_backend_cpu.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ubuntu/mlcourses/dlsys/3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.o -MF CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.o.d -o CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.o -c /home/ubuntu/mlcourses/dlsys/3/src/ndarray_backend_cpu.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ubuntu/dlsys/3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.o -MF CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.o.d -o CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.o -c /home/ubuntu/dlsys/3/src/ndarray_backend_cpu.cc
 
 CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/mlcourses/dlsys/3/src/ndarray_backend_cpu.cc > CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.i
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/dlsys/3/src/ndarray_backend_cpu.cc > CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.i
 
 CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/mlcourses/dlsys/3/src/ndarray_backend_cpu.cc -o CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.s
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/dlsys/3/src/ndarray_backend_cpu.cc -o CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.s
 
 # Object files for target ndarray_backend_cpu
 ndarray_backend_cpu_OBJECTS = \
@@ -90,15 +90,15 @@ ndarray_backend_cpu_OBJECTS = \
 # External object files for target ndarray_backend_cpu
 ndarray_backend_cpu_EXTERNAL_OBJECTS =
 
-/home/ubuntu/mlcourses/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cpu.cpython-312-x86_64-linux-gnu.so: CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.o
-/home/ubuntu/mlcourses/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cpu.cpython-312-x86_64-linux-gnu.so: CMakeFiles/ndarray_backend_cpu.dir/build.make
-/home/ubuntu/mlcourses/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cpu.cpython-312-x86_64-linux-gnu.so: CMakeFiles/ndarray_backend_cpu.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ubuntu/mlcourses/dlsys/3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared module /home/ubuntu/mlcourses/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cpu.cpython-312-x86_64-linux-gnu.so"
+/home/ubuntu/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cpu.cpython-312-x86_64-linux-gnu.so: CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.o
+/home/ubuntu/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cpu.cpython-312-x86_64-linux-gnu.so: CMakeFiles/ndarray_backend_cpu.dir/build.make
+/home/ubuntu/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cpu.cpython-312-x86_64-linux-gnu.so: CMakeFiles/ndarray_backend_cpu.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ubuntu/dlsys/3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared module /home/ubuntu/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cpu.cpython-312-x86_64-linux-gnu.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ndarray_backend_cpu.dir/link.txt --verbose=$(VERBOSE)
-	/usr/bin/strip /home/ubuntu/mlcourses/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cpu.cpython-312-x86_64-linux-gnu.so
+	/usr/bin/strip /home/ubuntu/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cpu.cpython-312-x86_64-linux-gnu.so
 
 # Rule to build all files generated by this target.
-CMakeFiles/ndarray_backend_cpu.dir/build: /home/ubuntu/mlcourses/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cpu.cpython-312-x86_64-linux-gnu.so
+CMakeFiles/ndarray_backend_cpu.dir/build: /home/ubuntu/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cpu.cpython-312-x86_64-linux-gnu.so
 .PHONY : CMakeFiles/ndarray_backend_cpu.dir/build
 
 CMakeFiles/ndarray_backend_cpu.dir/clean:
@@ -106,6 +106,6 @@ CMakeFiles/ndarray_backend_cpu.dir/clean:
 .PHONY : CMakeFiles/ndarray_backend_cpu.dir/clean
 
 CMakeFiles/ndarray_backend_cpu.dir/depend:
-	cd /home/ubuntu/mlcourses/dlsys/3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/mlcourses/dlsys/3 /home/ubuntu/mlcourses/dlsys/3 /home/ubuntu/mlcourses/dlsys/3/build /home/ubuntu/mlcourses/dlsys/3/build /home/ubuntu/mlcourses/dlsys/3/build/CMakeFiles/ndarray_backend_cpu.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/ubuntu/dlsys/3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/dlsys/3 /home/ubuntu/dlsys/3 /home/ubuntu/dlsys/3/build /home/ubuntu/dlsys/3/build /home/ubuntu/dlsys/3/build/CMakeFiles/ndarray_backend_cpu.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/ndarray_backend_cpu.dir/depend
 

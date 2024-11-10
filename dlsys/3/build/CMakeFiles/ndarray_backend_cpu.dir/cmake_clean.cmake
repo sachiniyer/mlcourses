@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/ubuntu/mlcourses/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cpu.cpython-312-x86_64-linux-gnu.so"
-  "/home/ubuntu/mlcourses/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cpu.pdb"
+  "/home/ubuntu/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cpu.cpython-312-x86_64-linux-gnu.so"
+  "/home/ubuntu/dlsys/3/python/needle/backend_ndarray/ndarray_backend_cpu.pdb"
   "CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.o"
   "CMakeFiles/ndarray_backend_cpu.dir/src/ndarray_backend_cpu.cc.o.d"
 )
