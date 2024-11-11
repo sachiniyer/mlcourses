@@ -1,10 +1,12 @@
 """The module.
 """
+
 from typing import List, Callable, Any
 from needle.autograd import Tensor
 from needle import ops
 import needle.init as init
 import numpy as np
+import math
 
 
 class Parameter(Tensor):
@@ -80,6 +82,7 @@ class Identity(Module):
 
 
 class Linear(Module):
+    # TODO: Review
     def __init__(
         self, in_features, out_features, bias=True, device=None, dtype="float32"
     ):
@@ -88,27 +91,47 @@ class Linear(Module):
         self.out_features = out_features
 
         ### BEGIN YOUR SOLUTION
-        raise NotImplementedError()
+        self.weight = Parameter(
+            init.kaiming_uniform(
+                fan_in=in_features, fan_out=out_features, device=device, dtype=dtype
+            )
+        )
+        if bias:
+            self.bias = Parameter(
+                init.kaiming_uniform(
+                    fan_in=out_features,
+                    fan_out=1,
+                    device=device,
+                    dtype=dtype,
+                    requires_grad=True,
+                ).reshape((1, out_features))
+            )
+        else:
+            self.bias = None
         ### END YOUR SOLUTION
 
     def forward(self, X: Tensor) -> Tensor:
         ### BEGIN YOUR SOLUTION
-        raise NotImplementedError()
+        res = X @ self.weight
+        if self.bias is not None:
+            res = res + ops.broadcast_to(self.bias, res.shape)
+        return res
         ### END YOUR SOLUTION
 
 
 class Flatten(Module):
     def forward(self, X):
         ### BEGIN YOUR SOLUTION
-        raise NotImplementedError()
+        return ops.reshape(X, (X.shape[0], math.prod(X.shape[1:])))
         ### END YOUR SOLUTION
 
 
 class ReLU(Module):
     def forward(self, x: Tensor) -> Tensor:
         ### BEGIN YOUR SOLUTION
-        raise NotImplementedError()
+        return ops.relu(x)
         ### END YOUR SOLUTION
+
 
 class Sequential(Module):
     def __init__(self, *modules):
@@ -117,14 +140,20 @@ class Sequential(Module):
 
     def forward(self, x: Tensor) -> Tensor:
         ### BEGIN YOUR SOLUTION
-        raise NotImplementedError()
+        for module in self.modules:
+            x = module(x)
+        return x
         ### END YOUR SOLUTION
 
 
 class SoftmaxLoss(Module):
     def forward(self, logits: Tensor, y: Tensor):
         ### BEGIN YOUR SOLUTION
-        raise NotImplementedError()
+        data_size = logits.shape[0]
+        labels = (
+            logits * init.one_hot(logits.shape[1], y, device=y.device, dtype=y.dtype)
+        ).sum()
+        return (ops.logsumexp(logits, axes=(1,)).sum() - labels) / data_size
         ### END YOUR SOLUTION
 
 
@@ -135,13 +164,46 @@ class BatchNorm1d(Module):
         self.eps = eps
         self.momentum = momentum
         ### BEGIN YOUR SOLUTION
-        raise NotImplementedError()
+        self.weight = Parameter(
+            init.ones(dim, device=device, dtype=dtype, requires_grad=True)
+        )
+        self.bias = Parameter(
+            init.zeros(dim, device=device, dtype=dtype, requires_grad=True)
+        )
+        self.running_mean = init.zeros(
+            dim, device=device, dtype=dtype, requires_grad=False
+        )
+        self.running_var = init.ones(
+            dim, device=device, dtype=dtype, requires_grad=False
+        )
         ### END YOUR SOLUTION
 
     def forward(self, x: Tensor) -> Tensor:
         ### BEGIN YOUR SOLUTION
-        raise NotImplementedError()
+        if self.training:
+            ex = x.sum(0) / x.shape[0]
+            self.running_mean.data = (
+                1 - self.momentum
+            ) * self.running_mean.data + ex.data * self.momentum
+            ex = ops.broadcast_to(ex, x.shape)
+            sub = x - ex
+            var_x = ops.summation(sub * sub, axes=0) / x.shape[0]
+            self.running_var.data = (
+                1 - self.momentum
+            ) * self.running_var.data + var_x.data * self.momentum
+        else:
+            ex = ops.broadcast_to(self.running_mean, x.shape)  # batch_size, dim
+            var_x = self.running_var
+            sub = x - ex
+
+        y = (var_x + self.eps) ** 0.5
+        y = ops.broadcast_to(y, x.shape)
+        w = ops.broadcast_to(self.weight, x.shape)
+        b = ops.broadcast_to(self.bias, x.shape)
+        h = w * (sub / y) + b
+        return h
         ### END YOUR SOLUTION
+
 
 class BatchNorm2d(BatchNorm1d):
     def __init__(self, *args, **kwargs):
@@ -152,7 +214,7 @@ class BatchNorm2d(BatchNorm1d):
         s = x.shape
         _x = x.transpose((1, 2)).transpose((2, 3)).reshape((s[0] * s[2] * s[3], s[1]))
         y = super().forward(_x).reshape((s[0], s[2], s[3], s[1]))
-        return y.transpose((2,3)).transpose((1,2))
+        return y.transpose((2, 3)).transpose((1, 2))
 
 
 class LayerNorm1d(Module):

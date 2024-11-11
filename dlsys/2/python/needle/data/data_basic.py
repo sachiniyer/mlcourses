@@ -72,8 +72,8 @@ class DataLoader:
                 np.random.permutation(len(self.dataset)),
                 range(self.batch_size, len(self.dataset), self.batch_size),
             )
-        ### END YOUR SOLUTION
         return self
+        ### END YOUR SOLUTION
 
     def __next__(self):
         ### BEGIN YOUR SOLUTION

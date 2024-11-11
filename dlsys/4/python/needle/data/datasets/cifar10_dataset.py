@@ -3,6 +3,8 @@ import pickle
 from typing import Iterator, Optional, List, Sized, Union, Iterable, Any
 import numpy as np
 from ..data_basic import Dataset
+import pickle
+
 
 class CIFAR10Dataset(Dataset):
     def __init__(
@@ -10,7 +12,7 @@ class CIFAR10Dataset(Dataset):
         base_folder: str,
         train: bool,
         p: Optional[int] = 0.5,
-        transforms: Optional[List] = None
+        transforms: Optional[List] = None,
     ):
         """
         Parameters:
@@ -22,7 +24,22 @@ class CIFAR10Dataset(Dataset):
         y - numpy array of labels
         """
         ### BEGIN YOUR SOLUTION
-        raise NotImplementedError()
+        data_batch_files = ["test_batch"]
+        if train:
+            data_batch_files = [f"data_batch_{i}" for i in range(1, 6)]
+        X, y = [], []
+        for data_batch_file in data_batch_files:
+            with open(os.path.join(base_folder, data_batch_file), "rb") as f:
+                data_dict = pickle.load(f, encoding="bytes")
+                X.append(data_dict[b"data"])
+                y.append(data_dict[b"labels"])
+        X = np.concatenate(X, axis=0)
+        X = X / 255.0
+        X = X.reshape((-1, 3, 32, 32))
+        y = np.concatenate(y, axis=None)
+        self.X = X
+        self.y = y
+        self.transforms = transforms
         ### END YOUR SOLUTION
 
     def __getitem__(self, index) -> object:
@@ -31,7 +48,12 @@ class CIFAR10Dataset(Dataset):
         Image should be of shape (3, 32, 32)
         """
         ### BEGIN YOUR SOLUTION
-        raise NotImplementedError()
+        if self.transforms:
+            image = np.array([self.apply_transforms(img) for img in self.X[index]])
+        else:
+            image = self.X[index]
+        label = self.y[index]
+        return image, label
         ### END YOUR SOLUTION
 
     def __len__(self) -> int:
@@ -39,5 +61,5 @@ class CIFAR10Dataset(Dataset):
         Returns the total number of examples in the dataset
         """
         ### BEGIN YOUR SOLUTION
-        raise NotImplementedError()
+        return len(self.y)
         ### END YOUR SOLUTION
