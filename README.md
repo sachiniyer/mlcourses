@@ -1,5 +1,5 @@
 # mlcourses
-The goal is to finish 5 courses or textbooks (specifically the exercises) before the year ends.
+The goal is to finish 4 courses or textbooks (specifically the exercises) before the year ends.
 
 I will also only include the notebooks/exercises for the courses. The materials are linked in the sections.
 
