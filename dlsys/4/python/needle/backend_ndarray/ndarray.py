@@ -675,3 +675,9 @@ def sum(a, axis=None, keepdims=False):
 
 def flip(a, axes):
     return a.flip(axes)
+
+
+def transpose(a, axes=None):
+    if axes is None:
+        axes = tuple(range(a.ndim))[::-1]
+    return a.permute(axes)

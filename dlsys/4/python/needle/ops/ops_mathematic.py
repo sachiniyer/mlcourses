@@ -425,15 +425,12 @@ class Split(TensorTupleOp):
 
     def compute(self, A):
         ### BEGIN YOUR SOLUTION
-        slices = [
-            slice(0, A.shape[i], 1) if i != self.axis else 0
-            for i in range(len(A.shape))
-        ]
-        tensors = []
+        slices = [slice(0, i) for i in A.shape]
         new_shape = tuple([A.shape[s] for s in range(len(A.shape)) if s != self.axis])
+        tensors = []
         for i in range(A.shape[self.axis]):
-            slices[self.axis] = i
-            tensors.append(A[tuple(slices)].reshape(new_shape))
+            slices[self.axis] = slice(i, i + 1)
+            tensors.append(A[tuple(slices)].compact().reshape(new_shape))
         return tuple(tensors)
         ### END YOUR SOLUTION
 
