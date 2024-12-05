@@ -1,0 +1,31 @@
+#+TAGS: CIL
+
+
+* A Theoretical Study on Solving Continual Learning
+** Review
+*** Info
+*Arxiv:* https://arxiv.org/abs/2211.02633
+*Authors:* Gyuhak Kim, Changnan Xiao, Tatsuya Konishi, Zixuan Ke, Bing Liu
+*Date:* Nov 2022
+*** Problem Being Solved?
+The paper aims to prove that OOD is important to the Continual Learning Problem. There are two types of Continual Learning, Class Incremental Learning (CIL) and Task Incremental Learning (TIL). TIL is essentially the same thing as Within-Task Prediction, so it is not considered strongly in the paper. Instead the paper focuses on a way to improve CIL.
+
+The paper shows that a good Within-Task Prediction (WP) and Task-ID Prediction (TP) is necessary and sufficient for a good CIL. Additionally, Out of Distribution detection (OOD) + TP is necessary and sufficient for a good WP.
+[[./images/continual-learning-theoreticalp1.png]]
+[[https://mermaid.live/edit#pako:eNp10UFrwyAUB_CvIp46aC47etgluQQCCUwIDC9v0SbS5ln0ORil330mjR2BzVPePz-Uv9744LThggcCMpWF0cNcfL0qZGmVjWClQ7IY4cIaAx4tjuxQNi8bqBdxgRBYjYM3s0HayzpTuVAJ4fyPlE_Zd4L1liaLxeo7b7QdyDpkh77L23WP3Ypa74DMoG0rwdpIzJ1YZQN5-xlXUhkyG04mF2lYUbwtfRTuErkkW9U16LvHvHV6Znslu9zlrzGdy498Nn4Gq9Pl35a_itOUrkVxkT41-LPiCu_JQST3_o0DF-SjOfJ41b9vlUPv4jhxcYJLSNMV8MO5eZvvP37okoY][source]]
+*** What is an overview of the method?
+The paper has two parts, a theoretical foundation for why this structure exists as it does. An experimental portion where CIL algorithms are paired with good OOD detection algorithms and the performance is show to increase. I'll skip the theoretical foundations (to hard to synthesize into something that can be explained easily).
+*** What are the metrics of success?
+- Average Classification Accuracy: How accurate is the method over all the classes after learning the last class
+- Average AUC (Area Under the ROC Curve): [[https://www.analyticsvidhya.com/blog/2020/06/auc-roc-curve-machine-learning/][ROC Curve Doc]]. Basically for a given task, measuring the AUC (binary being In Distribution and Out of Distribution) and then taking the average of that number across all of the tasks.
+*** What are the key innovations over prior work?
+1. Providing a solid theoretical foundation for why OOD detection matters
+2. Backing up that theoretical foundation with emperical results that also prove that OOD detection matters
+*** What are the key results?
+They show that a good OOD detection algorithm (e.g. ODIN or CSI) can significantly improve the accuracy of a CIL model (e.g. HAT or Sup). They show that the addition of CSI to HAT or Sup outperform the baselines by a large margin.
+*** How might this work have long term impact?
+- Implication for regularization and replay methods: It is important to learn the OOD detection and minimize for catastrophic forgetting together.
+- Implication for open-world learning: New tasks can continually be discovered through OOD detection and learned, potentially allowing for self-supervised learning.
+- WP and TP/OOD need to be optimized jointly to ensure that OOD does not affect previous tasks
+** Questions
+N/A

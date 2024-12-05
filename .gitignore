@@ -4,3 +4,4 @@ __pycache__
 .ccls-cache
 .pytest_cache
 .ropeproject
+bin

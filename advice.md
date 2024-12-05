@@ -1,3 +1,5 @@
+# Brockman
+
 Quora link: https://www.quora.com/What-are-the-best-ways-to-pick-up-Deep...
 
 
@@ -11,3 +13,34 @@ If you'd like to take courses... Pieter Abbeel and Wojciech Zaremba suggest the 
 
 If you'd like to get your hands dirty... Ilya Sutskever recommends implementing simple MNIST classifiers, small convnets, reimplementing char-rnn, and then playing with a big convnet. Personally, I started out by picking Kaggle competitions (especially the "Knowledge" ones) and using those as a source of problems. Implementing agents for OpenAI Gym (or algorithms for the set of research problems we’ll be releasing soon) could also be a good starting place.
 
+# Letta Software Engineering Stack
+
+- Strong proficiency with Python
+- Strong understanding of how to architect services for security, reliability, and performance
+- Ability to design clean, robust REST APIs
+- Ability to architect robust, production-grade services
+- Familiarity with IaC (Terraform) and cloud infrastructure
+- Familiarity with Docker and K8
+- Familiarity with tooling across the AI stack, such as inference engines (e.g. vLLM, Ollama), vector DBs (e.g. Chroma, pgvector), and RAG (e.g. llama-index, langchain)
+- Bonus: proficient with TypeScript, React, Tailwind, etc. (the modern stack for web applications)
+
+- Inference Engines
+  - vLLM
+  - Ollama
+- vector DBs
+  - Chroma
+  - pgvector
+- RAG
+  - llama-index
+  - langchain
+
+
+# Layers of the Stack
+
+- Fundamentals of Learning Theory - Linear Algebra - ee263 (not studying this too heavily)
+- Model Architecture - bishop book, eecs189
+- Machine learning compilation - Deep Learning Systems Course, write some pytorch
+- Inference/Training Optimization - AISYS-fa2024, vllm commit
+- Machine Learning Applications - Project that spans Letta Software Engineering Stack
+
+https://huyenchip.com/ml-interviews-book/

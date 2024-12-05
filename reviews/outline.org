@@ -1,0 +1,16 @@
+#+TAGS:
+
+
+* paper name
+** Review
+*** Info
+*Arxiv:* arvix link
+*Authors:* comma separated authors
+*Date:* month/year of paper
+*** Problem Being Solved?
+*** What is an overview of the method?
+*** What are the metrics of success?
+*** What are the key innovations over prior work?
+*** What are the key results?
+*** How might this work have long term impact?
+** Questions

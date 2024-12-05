@@ -36,6 +36,28 @@ I will also only include the notebooks/exercises for the courses. The materials 
 - [ ] 21
 - [ ] 22
 
+## [Bishop Book](https://www.bishopbook.com/)
+- [ ] 1
+- [ ] 2
+- [ ] 3
+- [ ] 4
+- [ ] 5
+- [ ] 6
+- [ ] 7
+- [ ] 8
+- [ ] 9
+- [ ] 10
+- [ ] 11
+- [ ] 12
+- [ ] 13
+- [ ] 14
+- [ ] 15
+- [ ] 16
+- [ ] 17
+- [ ] 18
+- [ ] 19
+- [ ] 20
+
 ## [eecs189](https://eecs189.org/) (2024 version)
 - [ ] 1
 - [ ] 2
@@ -57,3 +79,4 @@ I will also only include the notebooks/exercises for the courses. The materials 
 - https://www.ualberta.ca/en/admissions-programs/online-courses/reinforcement-learning/index.html
 - [Stanford MLSys Seminars](https://www.youtube.com/@StanfordMLSysSeminars/streams)
 - [Neural Networks: Zero to Hero](https://karpathy.ai/zero-to-hero.html)  or [LLM101n](https://github.com/karpathy/LLM101n)
+- [LLMs as Operating Systems: Agent Memory](https://www.deeplearning.ai/short-courses/llms-as-operating-systems-agent-memory/)

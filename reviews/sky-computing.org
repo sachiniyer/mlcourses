@@ -1,0 +1,35 @@
+#+TAGS: stoica infra
+
+
+* paper name
+** Review
+*** Info
+*Arxiv:* https://sigops.org/s/conferences/hotos/2021/papers/hotos21-s02-stoica.pdf
+*Authors:* Ion Stoica, Scott Shenker
+*Date:* June 2021
+*** Problem Being Solved?
+The cloud has moved away from commoditization as cloud providers have started offering more distinct (and proprietary) services to differentiate themselves from each other. The paper looks for a solution to standardize the cloud across providers and bring back commoditization while empowering consumers.
+*** What is an overview of the method?
+- Compatibility Layer: Set of APIs to interact with each of the clouds uniformly
+  - Can be achieved through an OSS layer (like Terraform). Companies can be built around this (like Hashicorp).
+- Intercloud Layer: Ensuring that the clouds can be presented in a unified interface
+  - Uniform naming scheme for the OSS services (that are a shim over the cloud services)
+  - A directory service (allows cloud providers to register their service)
+  - An accounting and charging method across the clouds
+- Reciprocal Peering: Data Movement been the clouds does not have the egress fees that there are today
+  - Would require some business agreements. Even without this, it may be cheaper in some cases to eat the egress costs.
+*** What are the metrics of success?
+There are no inherent metrics of success for this paper. It merely lists a possible path for the future.
+*** What are the key innovations over prior work?
+There are no real innovations in this work other than the ideas presented in the overview section
+*** What are the key results?
+There are no key results other than to lay out a definition for what the future may look for the cloud.
+*** How might this work have long term impact?
+This paper may have long term impact, because it clearly lists out the components that are needed to bring back utility computing to consumers, and ensure that cloud providers are forces to compete on a different plane other than the distinct proprietary services that they are offering.
+** Questions
+- What is the implication for GPU Clouds
+  - Compatibility Layer: https://github.com/skypilot-org/skypilot and the GPU architectures are almost all the same
+  - Intercloud Layer: Commodification happens because of NVIDIA naming scheme
+  - Reciprocal Peering: remaining issue
+- Why didn't Anthos - https://cloud.google.com/anthos succeed?
+  - Probably still due to egress fees
