@@ -70,10 +70,10 @@ I will also only include the notebooks/exercises for the courses. The materials 
 - [ ] 9
 - [ ] 10
 - [ ] 11
-- [ ] 12 - not out yet
-- [ ] 13 - not out yet
-- [ ] 14 - not out yet
-- [ ] 15 - not out yet
+- [ ] 12
+- [ ] 13
+- [ ] 14
+- [ ] 15
 
 ## potential other courses
 - https://www.ualberta.ca/en/admissions-programs/online-courses/reinforcement-learning/index.html
