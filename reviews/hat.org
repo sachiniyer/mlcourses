@@ -4,9 +4,9 @@
 * Overcoming Catastrophic Forgetting with Hard Attention to the Task
 ** Review
 *** Info
-*Arxiv:* https://arxiv.org/pdf/1801.01423
-*Authors:* Joan Serra Dıdac Surıs Marius Miron Alexandros Karatzoglou
-*Date:* May 2018
+- *Arxiv:* https://arxiv.org/pdf/1801.01423
+- *Authors:* Joan Serra Dıdac Surıs Marius Miron Alexandros Karatzoglou
+- *Date:* May 2018
 *** Problem Being Solved?
 Catastrophic forgetting is the tendency for neural networks when performing continual learning to forget older tasks. Essentially, the more epochs away from the task learned, the harder it is to "remember" how to perform that task.
 *** What is an overview of the method?

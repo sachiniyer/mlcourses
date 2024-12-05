@@ -4,9 +4,9 @@
 * What’s Hidden in a Randomly Weighted Neural Network?
 ** Review
 *** Info
-*Arxiv:* https://arxiv.org/pdf/1911.13299
-*Authors:* Vivek Ramanujan, Mitchell Wortsman, Aniruddha Kembhavi, Ali Farhadi, Mohammad Rastegari
-*Date:* Mar 2020
+- *Arxiv:* https://arxiv.org/pdf/1911.13299
+- *Authors:* Vivek Ramanujan, Mitchell Wortsman, Aniruddha Kembhavi, Ali Farhadi, Mohammad Rastegari
+- *Date:* Mar 2020
 *** Problem Being Solved?
 There does not seem to be a specific objective to the paper, and instead the goal seems to be to understand how the "optimization and initialization of neural networks" can affect training and performance.
 *** What is an overview of the method?

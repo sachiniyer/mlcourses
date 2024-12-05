@@ -4,9 +4,9 @@
 * paper name
 ** Review
 *** Info
-*Arxiv:* arvix link
-*Authors:* comma separated authors
-*Date:* month/year of paper
+- *Arxiv:* arvix link
+- *Authors:* comma separated authors
+- *Date:* month/year of paper
 *** Problem Being Solved?
 *** What is an overview of the method?
 *** What are the metrics of success?

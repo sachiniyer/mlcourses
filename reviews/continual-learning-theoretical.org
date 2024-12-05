@@ -4,9 +4,9 @@
 * A Theoretical Study on Solving Continual Learning
 ** Review
 *** Info
-*Arxiv:* https://arxiv.org/abs/2211.02633
-*Authors:* Gyuhak Kim, Changnan Xiao, Tatsuya Konishi, Zixuan Ke, Bing Liu
-*Date:* Nov 2022
+- *Arxiv:* https://arxiv.org/abs/2211.02633
+- *Authors:* Gyuhak Kim, Changnan Xiao, Tatsuya Konishi, Zixuan Ke, Bing Liu
+- *Date:* Nov 2022
 *** Problem Being Solved?
 The paper aims to prove that OOD is important to the Continual Learning Problem. There are two types of Continual Learning, Class Incremental Learning (CIL) and Task Incremental Learning (TIL). TIL is essentially the same thing as Within-Task Prediction, so it is not considered strongly in the paper. Instead the paper focuses on a way to improve CIL.
 

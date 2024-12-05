@@ -4,9 +4,9 @@
 * HAT-CL: A Hard-Attention-To-The-Task PyTorch Library For Continual Learning
 ** Review
 *** Info
-*Arxiv:* https://arxiv.org/pdf/2307.09653
-*Authors:* Xiaotian Duan
-*Date:* Feb 2024
+- *Arxiv:* https://arxiv.org/pdf/2307.09653
+- *Authors:* Xiaotian Duan
+- *Date:* Feb 2024
 *** Problem Being Solved?
 Implementations of HAT are hairy because of the manual gradient manipulation that happens in the backward step. Additionally, applying the masks to existing networks can be tedious and therefore prone to error (especially for transformer networks like ViT). A better method for implementation is needed.
 *** What is an overview of the method?

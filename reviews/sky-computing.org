@@ -4,9 +4,9 @@
 * paper name
 ** Review
 *** Info
-*Arxiv:* https://sigops.org/s/conferences/hotos/2021/papers/hotos21-s02-stoica.pdf
-*Authors:* Ion Stoica, Scott Shenker
-*Date:* June 2021
+- *Arxiv:* https://sigops.org/s/conferences/hotos/2021/papers/hotos21-s02-stoica.pdf
+- *Authors:* Ion Stoica, Scott Shenker
+- *Date:* June 2021
 *** Problem Being Solved?
 The cloud has moved away from commoditization as cloud providers have started offering more distinct (and proprietary) services to differentiate themselves from each other. The paper looks for a solution to standardize the cloud across providers and bring back commoditization while empowering consumers.
 *** What is an overview of the method?

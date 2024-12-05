@@ -2,9 +2,9 @@
 
 * MemGPT: Towards LLMs as Operating Systems
 ** Info
-*Arxiv:* https://arxiv.org/pdf/2310.08560
-*Authors:* Charles Packer, Sarah Wooders, Kevin Lin, Vivian Fang, Shishir G. Patil, Ion Stoica, Joseph E. Gonzalez
-*Date:* Feb 2024
+- *Arxiv:* https://arxiv.org/pdf/2310.08560
+- *Authors:* Charles Packer, Sarah Wooders, Kevin Lin, Vivian Fang, Shishir G. Patil, Ion Stoica, Joseph E. Gonzalez
+- *Date:* Feb 2024
 ** Review
 *** Problem Being Solved?
 LLMs have a strict context length. This is context length is gradually filled through the transformer architecture, resulting in a quadratic scaling of computation time with context lengths increase. Additionally, /Liu et al., 2023a/ shows uneven attention distribution over large context lengths. The problem is that LLMs can not access any data outside of their context lengths, restricting the effectiveness over large corpuses/long message histories.

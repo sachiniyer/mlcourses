@@ -4,9 +4,9 @@
 * How to Exploit Hyperspherical Embeddings for Out-of-Distribution Detection?
 ** Review
 *** Info
-*Arxiv:* https://arxiv.org/abs/2203.04450
-*Authors:* Yifei Ming, Yiyou Sun, Ousmane Dia, Yixuan Li
-*Date:* Mar 2022
+- *Arxiv:* https://arxiv.org/abs/2203.04450
+- *Authors:* Yifei Ming, Yiyou Sun, Ousmane Dia, Yixuan Li
+- *Date:* Mar 2022
 *** Problem Being Solved?
 Out Of Distribution Detectin (OOD) is a important (described in [[./continual-learning-theoretical.org]]). The paper tries to create better OOD detection by modeling the outputs of a CIL model onto a hyperspherical space. Then, using two loss function (create tight clusters and distribute those clusters away from each other) they create a representation that allows for better OOD.
 *** What is an overview of the method?
