@@ -80,3 +80,4 @@ I will also only include the notebooks/exercises for the courses. The materials 
 - [Stanford MLSys Seminars](https://www.youtube.com/@StanfordMLSysSeminars/streams)
 - [Neural Networks: Zero to Hero](https://karpathy.ai/zero-to-hero.html)  or [LLM101n](https://github.com/karpathy/LLM101n)
 - [LLMs as Operating Systems: Agent Memory](https://www.deeplearning.ai/short-courses/llms-as-operating-systems-agent-memory/)
+- [Huyen Chip Introduction to Machine Learning Interviews Questions](https://huyenchip.com/ml-interviews-book)
