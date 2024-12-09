@@ -62,4 +62,4 @@ This paper also shows that WIP and TIP are /necessary and sufficient/ for good C
 ** 1 Introduction
 CIL: The learning process builds a single classifier for all the tasks/classes learned so far. Any test instance from any class can be presented for classification. No task information (e.g. task id) will be presented at test time.
 *** Class Incremental Learning
-- $$D_k = {(x_k^i, y_k^i)_{i=1}^{n_k}$$ describes the training dataset for each task $$k$$
+- $$D_k = (x_k^i, y_k^i)_{i=1}^{n_k}$$ describes the training dataset for each task $$k$$
