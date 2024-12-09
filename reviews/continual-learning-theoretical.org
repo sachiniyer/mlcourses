@@ -11,8 +11,28 @@
 The paper aims to prove that OOD is important to the Continual Learning Problem. There are two types of Continual Learning, Class Incremental Learning (CIL) and Task Incremental Learning (TIL). TIL is essentially the same thing as Within-Task Prediction, so it is not considered strongly in the paper. Instead the paper focuses on a way to improve CIL.
 
 The paper shows that a good Within-Task Prediction (WP) and Task-ID Prediction (TP) is necessary and sufficient for a good CIL. Additionally, Out of Distribution detection (OOD) + TP is necessary and sufficient for a good WP.
-[[./images/continual-learning-theoreticalp1.png]]
-[[https://mermaid.live/edit#pako:eNp10UFrwyAUB_CvIp46aC47etgluQQCCUwIDC9v0SbS5ln0ORil330mjR2BzVPePz-Uv9744LThggcCMpWF0cNcfL0qZGmVjWClQ7IY4cIaAx4tjuxQNi8bqBdxgRBYjYM3s0HayzpTuVAJ4fyPlE_Zd4L1liaLxeo7b7QdyDpkh77L23WP3Ypa74DMoG0rwdpIzJ1YZQN5-xlXUhkyG04mF2lYUbwtfRTuErkkW9U16LvHvHV6Znslu9zlrzGdy498Nn4Gq9Pl35a_itOUrkVxkT41-LPiCu_JQST3_o0DF-SjOfJ41b9vlUPv4jhxcYJLSNMV8MO5eZvvP37okoY][source]]
+#+begin_src mermaid :file images/continual-learning-theoreticalp1.png
+stateDiagram-v2
+   CL: Continual Learning (CL)
+   CIL: Class Incremental Learning (CIL)
+   TIL: Task Incremental Learning (TIL)
+   WP: Within-Task Prediction (WP)
+   TP: Task-Id Prediction (TP)
+   OOD: Out of Distribution Detection (OOD)
+   CL --> CIL
+
+   CL --> TIL
+   CIL --> WP
+   TIL --> WP
+
+   CIL --> TP
+   WP --> TP
+   WP --> OOD
+#+end_src
+
+#+RESULTS:
+[[file:images/continual-learning-theoreticalp1.png]]
+
 *** What is an overview of the method?
 The paper has two parts, a theoretical foundation for why this structure exists as it does. An experimental portion where CIL algorithms are paired with good OOD detection algorithms and the performance is show to increase. I'll skip the theoretical foundations (to hard to synthesize into something that can be explained easily).
 *** What are the metrics of success?
@@ -29,3 +49,15 @@ They show that a good OOD detection algorithm (e.g. ODIN or CSI) can significant
 - WP and TP/OOD need to be optimized jointly to ensure that OOD does not affect previous tasks
 ** Questions
 N/A
+
+* Detailed Review
+** O Abstract
+There are two types of Continual Learning, Class Incremental Learning (CIL) and Task Incremental Learning (TIL). The main problem with both is catastrophic forgetting (CF).
+- TIL: Catastrophic forgetting is mostly solved
+- CIL: Catastrophic forgetting is still an issue due to inter-task class separation
+  - Within-Task Prediction (WIP): Effectively the same as TIL
+  - Task-Id Prediction (TIP): This is main problem, and is correlated with the Out-Of-Distribution (OOD) technique
+
+This paper also shows that WIP and TIP are /necessary and sufficient/ for good CIL performance.
+** 1 Introduction
+*** Class Incremental Learning
