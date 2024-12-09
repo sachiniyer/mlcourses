@@ -62,4 +62,10 @@ This paper also shows that WIP and TIP are /necessary and sufficient/ for good C
 ** 1 Introduction
 CIL: The learning process builds a single classifier for all the tasks/classes learned so far. Any test instance from any class can be presented for classification. No task information (e.g. task id) will be presented at test time.
 *** Class Incremental Learning
-- $$D_k = (x_k^i, y_k^i)_{i=1}^{n_k}$$ describes the training dataset for each task $$k$$
+$$D_k = \{(x_k^i, y_k^i)\}_{i=1}^{n_k}$$ describes the training dataset for each task $$k$$ where $$x_k^i$$ is an input sample and $$y_k^i$$ is a label for that sample.
+
+The goal is to create a model such that given any $$x$$ sample you can get to a $$y$$ label. In training, the task ids may be presented, but in testing, they may not be presented
+*** Task Incremental Learning
+$$D_k = \{((x_k^i, k), y_k^i)\}_{i=1}^{n_k}$$ the big difference here from CIL is $$x_k^i$$ vs $$(x_k^i, k)$$. The above definitions work the same here.
+
+The goal is to create a model such that for any $$(x, k)$$ you can find a corresponding $$y$$.
