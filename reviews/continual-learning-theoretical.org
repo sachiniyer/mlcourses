@@ -111,8 +111,8 @@ Expanded out the WP and TP probabilities are:
 Based off those two assumptions, we can expand out $$P(x \in X_{k,j} | D)$$ to the following
 
 \begin{equation}
-P(x \in X_{k_0,j_0} | D) &= \sum_{k=1,\ldots,n}{P(x \in X_{k,j_0} | x \in X_k, D)P(x \in X_k |D)} \\
-&= P(x \in X_{k_0,j_0} | x \in X_{k_0}, D)P(x \in X_{k_0} | D)
+P(x \in X_{k_0,j_0} | D) = \sum_{k=1,\ldots,n}{P(x \in X_{k,j_0} | x \in X_k, D)P(x \in X_k |D)} \\
+= P(x \in X_{k_0,j_0} | x \in X_{k_0}, D)P(x \in X_{k_0} | D)
 \end{equation}
 - Part 1: The probability input D is the superclass, class pairing $$k_0$$, $$j_0$$
 - Part 2: Definition for each of the different $$k$$ superclasses (representing the sum over each of the superclasses) and their probability leading into $$j_0$$
@@ -126,3 +126,59 @@ $$P(x \in X_{k_0} | D)$$ here defines the TP probability. What are the chances, 
 - This has nothing do with the training process or learning algorithms, but takes the probabilities as givens
 - Referring back to the assumptions, there does not say anything about classes crossing task/superclass boundaries (blurry tasks). It merely assumes that the tasks themselves are disjoint.
 - $$\textbf{CIL} = \textbf{WP} * \textbf{TP}$$, which implies that CIL problems can be described by their probabilistic definitions for WP and TP
+*** 3.2 CIL Improves as WP and/or TP Improve
+This study analyzes performance with a /trained CIL model/, and uses *cross-entropy* as the performance measure of the trained model.
+
+Cross-Entropy definition over two probability distributions $$p$$ and $$q$$: $$H(p, q) := -\mathbb{E}_p[\log q] = - \sum_{i} p_i \log q_i$$ (this is just the basic cross entropy equation)
+
+For a $$x \in X$$, let $$y$$ be the ground truth label. $$y_{k_0,j_0} = 1$$ if $$x \in X_{k_0,j_0}$$ and $$y_{k_0,j_0} = 0$$ if $$(k,j) \ne (k_0,j_0)$$ (specifically $$\forall (k,j) \ne (k_0,j_0)$$). $$\tilde{y}$$ is the WP ground truth label and $$\bar{y}$$ is the TP ground truth label. $$\tilde{y}$$ and $$\bar{y}$$ follow the same pattern as $$y$$ when setting $$1$$ and $$0$$.
+
+Based off this notation, we can set the following definitions for cross-entropy for CIL, WP and TP:
+- WP: $$H_{WP}(x) = H(\tilde{y}, \{P(x \in X_{k_0,j} | x \in X_{k_0}, D)\}_j)$$
+- TP: $$H_{TP}(x) = H(\bar{y}, \{P(x \in X_{k}|D\}_{k}))$$
+- CIL: $$H_{CIL}(x) = H(y,\{P(x \in X_{k,j} | D\}_{k,j})$$
+
+**** Theorem 1
+when $$H_{TP}(x) \le \delta$$ and $$H_{WP}(x) \le \epsilon$$ then $$H_{CIL} \le \delta + \epsilon$$. This definition says that the two cross entropies (TP and WP) are what compose the CIL cross entropy. This makes the /necessary and sufficient/ clause from the Introduction.
+
+More detailed proof of this is given in [[https://arxiv.org/pdf/2211.02633#theorem.1][A.1]] (where $$H_{CIL}$$ is expanded out and decomposed into $$H_{WP}$$ and $$H_{TP}$$).
+**** Corollary 1
+Corollary 1 expands on Theorem 1 to relate CIL to TP and WP individually (if TP is held constant, CIL is dependent on WP performance and vice versa).
+
+These two statements are formally defined by the following ($$U(X)$$ refers to the uniform distribution):
+- Take $$\( \mathbb{E}_{x \sim U(X)}[H_{TP}(x)] \leq \delta \)$$. Then $$\mathbb{E}_{x \sim U(X)}[H_{CIL}(x)] \leq \mathbb{E}_{x \sim U(X)}[H_{WP}(x)] + \delta$$ (CIL is dependent on WP performance - TP is held constant)
+- Take $$\( \mathbb{E}_{x \sim U(X)}[H_{WP}(x)] \leq \epsilon \)$$. Then $$\mathbb{E}_{x \sim U(X)}[H_{CIL}(x)] \leq \mathbb{E}_{x \sim U(X)}[H_{TP}(x)] + \epsilon$$ (CIL is dependent on TP performance - WP is held constant)
+
+*** 3.3 Task Prediction (TP) to OOD Detection
+**** Definition of OOD
+Again, use cross-entropy $$H$$ to measure performance of TP and OOD detection.
+- Probability he $$k$$th task says input $$D$$ is OOD: $$P_{k}'(x \in X_k | D)$$
+
+$$P_{k}'(x \in X_k | D)$$ (OOD probability) is a Bernoulli distribution while $$P(x \in X_k | D)$$ (TP probability) is a categorical distribution over the superclasses/tasks
+
+OOD Detectors can be defined with two methods:
+1. Using the output values corresponding to the classes of the task
+   - By taking sigmoid of maximum logit value
+   - Maximum Softmax Probability after re-scaling to 0 to 1 (rescaling the logits)
+2. Defining the OOD detector as a function of tasks
+   - Mahalanobis distance: distance between a point and a distribution $$D_M(\mathbf{x}, \boldsymbol{\mu}) = \sqrt{(\mathbf{x} - \boldsymbol{\mu})^\top \mathbf{\Sigma}^{-1} (\mathbf{x} - \boldsymbol{\mu})}$$
+     - $$x$$: The data point whose distance is being measured
+     - $$\mu$$: The mean vector of the distribution
+     - $$\Sigma$$: The covariance matrix of the distribution - the covariance between each variable in the matrix [[https://www.youtube.com/watch?v=152tSYtiQbw][more on this]]
+
+The cross entropy loss for OOD detector is defined by:
+\[
+H_{\text{OOD},k}(x) = \begin{cases}
+H(1, \mathbf{P}'_k(x \in \mathbf{X}_k | D)) = -\log \mathbf{P}'_k(x \in \mathbf{X}_k | D), & \text{if } x \in \mathbf{X}_k, \\
+H(0, \mathbf{P}'_k(x \in \mathbf{X}_k | D)) = -\log \mathbf{P}'_k(x \notin \mathbf{X}_k | D), & \text{if } x \notin \mathbf{X}_k.
+\end{cases}
+\]
+
+**** Theorem 2
+***** Bounding OOD cross entropy by a fixed TP cross entropy
+Assume $$x \in \textbf{X}_{k_0}$$
+- Case $$k=k_0$$: $$H_{OOD,k_0}(x) = -\log \mathbf{P}'_{k_0}(x \in \mathbf{X}_{k_0} | D) = -\log \mathbf{P}(x \in \mathbf{X}_{k_0} | D) = H_{TP}(x) \le \delta$$
+- Case $$k \ne k_0$$: Refer to [[https://arxiv.org/pdf/2211.02633#subsection.A.3][appendix]], the tricky part is $$-\log(\mathbf{P}(x \in \cup_{k' \ne k}X_{k'}|D)) \le -\log(\mathbf{P}(x \in X_{k_0} | D)$$. $$\cup_{k' \ne k}$$ defines the set of all tasks that is not equal to $$k'$$. The probability of that set must be $$\ge$$ than the prob of $$k_0$$ (which is then $$\le$$ because of the $$-\log$$). the $$\ge$$ inequality exists because $$k_0$$ is a subset of that $$\cup_{k' \ne k}$$ set union.
+***** Bounding TP cross entropy by OOD cross entropy
+Assume $$x \in \textbf{X}_{k_0}$$
+- Case $$k=k_0$$:
