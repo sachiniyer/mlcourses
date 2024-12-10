@@ -48,7 +48,10 @@ They show that a good OOD detection algorithm (e.g. ODIN or CSI) can significant
 - Implication for open-world learning: New tasks can continually be discovered through OOD detection and learned, potentially allowing for self-supervised learning.
 - WP and TP/OOD need to be optimized jointly to ensure that OOD does not affect previous tasks
 ** Questions
-N/A
+- 2 Related Work
+  - What is a PAC-Bayesian framework?
+  - What is orthogonal gradient descent?
+
 
 * Detailed Review
 ** O Abstract
@@ -62,10 +65,64 @@ This paper also shows that WIP and TIP are /necessary and sufficient/ for good C
 ** 1 Introduction
 CIL: The learning process builds a single classifier for all the tasks/classes learned so far. Any test instance from any class can be presented for classification. No task information (e.g. task id) will be presented at test time.
 *** Class Incremental Learning
-$$`D_k = \{(x_k^i, y_k^i)\}_{i=1}^{n_k}`$$ describes the training dataset for each task $$k$$ where $$x_k^i$$ is an input sample and $$y_k^i$$ is a label for that sample.
+$$D_k = \{(x_k^i, y_k^i)\}_{i=1}^{n_k}$$ describes the training dataset for each task $$k$$ where $$x_k^i$$ is an input sample and $$y_k^i$$ is a label for that sample.
 
 The goal is to create a model such that given any $$x$$ sample you can get to a $$y$$ label. In training, the task ids may be presented, but in testing, they may not be presented
 *** Task Incremental Learning
-$$`D_k = \{((x_k^i, k), y_k^i)\}_{i=1}^{n_k}`$$ the big difference here from CIL is $$x_k^i$$ vs $$(x_k^i, k)$$. The above definitions work the same here.
+$$D_k = \{((x_k^i, k), y_k^i)\}_{i=1}^{n_k}$$ the big difference here from CIL is $$x_k^i$$ vs $$(x_k^i, k)$$. The above definitions work the same here.
 
 The goal is to create a model such that for any $$(x, k)$$ you can find a corresponding $$y$$.
+*** Open world setting issues with CIL
+The main concept being analyzed here is how In-Distribution (IND) samples play with Out-Of-Distribution (OOD) samples (in testing). The main issue in open world settings (where tasks have not always been seen before) is to figure out IND/OOD. This paper will do the following:
+1. Create a theoretical foundation for:
+   - defining how CIL performance is bounded by WP and TP performances
+   - TP and task OOD detection performance bound each other
+2. Design a better CIL algorithm based of those theoretical foundations
+** 2 Related Work
+There is not much work to create theoretical guidance on how to solve the CIL problem (the paper states this )
+
+Existing approaches:
+- /regularization/: minimize changes to model parameters learned from previous tasks
+- /replay/: Memorize some old examples and use them to jointly train the new tasks
+- /pseudo-replay/: Synthesize data on the old task and use that to train the new tasks
+- /Parameter Isolation/: Create subnets from the overall network to learn different tasks (e.g. HAT)
+
+This work is different than previous works, because instead of focusing on traditional generalization bounds, this work focuses specifically on optimizing the CIL problem.
+** 3 CIL by Within-Task Prediction and Task-ID Prediction
+Two goals:
+1. Show that CIL performance improves if the within-task prediction (WP) improves and/or the task-id prediction (TP) improves.
+2. Show that TP and OOD detection bound each other which shows CIL performance is defined by WP and OOD
+3. Define the necessary conditions for a good CIL model (good WP and good TP/OOD)
+
+*** 3.1 CIL Problem Decomposition
+**** Definition of the input/tasks
+Tasks are defined as $$\{(X_k, Y_k)\}_{k=1,\ldots,T}$$. $$X_k$$ is the domain of task $$k$$. $$Y_k$$ are the classes of task $$k$$. $$Y_k$$ can be further decomposed into $$Y_{k,j}$$s where $$j$$ is the class of task $$k$$. In other terms, $$k$$ is the superclass, while $$j$$ is the class of an input.
+***** Assumption 1
+The classes of the same task are disjoint (there is no overlap between classes of the same task)
+***** Assumption 2
+The domains of tasks are disjoint (there is no overlap between the tasks themselves)
+**** Decomposition into WP and TP
+Goal of CIL problem: $$P(x \in X_{k,j} | D)$$. The probability of the $$k,j$$ superclass class pairing for a given input $$D$$
+
+Expanded out the WP and TP probabilities are:
+- WP: $$P(x \in X_{k,j} | x \in X_k, D)$$. Given the superclass $$k$$, what is the probability the input $$D$$ corresponds to class $$j$$
+- TP: $$P(x \in X_k | D)$$. What is the probability input $$D$$ corresponds to class $$k$$
+
+Based off those two assumptions, we can expand out $$P(x \in X_{k,j} | D)$$ to the following
+
+\begin{equation}
+P(x \in X_{k_0,j_0} | D) &= \sum_{k=1,\ldots,n}{P(x \in X_{k,j_0} | x \in X_k, D)P(x \in X_k |D)} \\
+&= P(x \in X_{k_0,j_0} | x \in X_{k_0}, D)P(x \in X_{k_0} | D)
+\end{equation}
+- Part 1: The probability input D is the superclass, class pairing $$k_0$$, $$j_0$$
+- Part 2: Definition for each of the different $$k$$ superclasses (representing the sum over each of the superclasses) and their probability leading into $$j_0$$
+- Part 3: Scoped back down for $$k_0$$ because of the Probability definition from the beginning.
+
+$$P(x \in X_{k_0,j_0} | x \in X_{k_0}, D)$$ here defines the WP probability. What are the chances, given superclass $$k_0$$, D corresponds to class $$j_0$$
+
+$$P(x \in X_{k_0} | D)$$ here defines the TP probability. What are the chances, input D corresponds to superclass $$k_0$$
+**** Remarks
+- $$P(x \in X_{k_0,j_0} | x \in X_{k_0}, D)P(x \in X_{k_0} | D)$$ shows that improving either of the Probabilities (WP or TP) will improve CIL performance
+- This has nothing do with the training process or learning algorithms, but takes the probabilities as givens
+- Referring back to the assumptions, there does not say anything about classes crossing task/superclass boundaries (blurry tasks). It merely assumes that the tasks themselves are disjoint.
+- $$\textbf{CIL} = \textbf{WP} * \textbf{TP}$$, which implies that CIL problems can be described by their probabilistic definitions for WP and TP
