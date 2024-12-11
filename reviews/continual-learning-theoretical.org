@@ -1,5 +1,5 @@
 #+TAGS: CIL
-
+#+OPTIONS: ^:{}
 
 * A Theoretical Study on Solving Continual Learning
 ** Review
@@ -51,7 +51,8 @@ They show that a good OOD detection algorithm (e.g. ODIN or CSI) can significant
 - 2 Related Work
   - What is a PAC-Bayesian framework?
   - What is orthogonal gradient descent?
-
+- 3.3 Task Prediction (TP) to OOD Detection
+  - Didn't understand Bounding TP cross entropy by OOD cross entropy well, but get the general idea
 
 * Detailed Review
 ** O Abstract
@@ -181,4 +182,87 @@ Assume $$x \in \textbf{X}_{k_0}$$
 - Case $$k \ne k_0$$: Refer to [[https://arxiv.org/pdf/2211.02633#subsection.A.3][appendix]], the tricky part is $$-\log(\mathbf{P}(x \in \cup_{k' \ne k}X_{k'}|D)) \le -\log(\mathbf{P}(x \in X_{k_0} | D)$$. $$\cup_{k' \ne k}$$ defines the set of all tasks that is not equal to $$k'$$. The probability of that set must be $$\ge$$ than the prob of $$k_0$$ (which is then $$\le$$ because of the $$-\log$$). the $$\ge$$ inequality exists because $$k_0$$ is a subset of that $$\cup_{k' \ne k}$$ set union.
 ***** Bounding TP cross entropy by OOD cross entropy
 Assume $$x \in \textbf{X}_{k_0}$$
-- Case $$k=k_0$$:
+- Case $$k=k_0$$: $$H_{OOD}(x) \le \delta  $$ by the definition of cross entropy means $$-\log{\mathbf{P}'_{k_0}{x \in \mathbf{X}_{k_0} | D) \le \delta_{k_0}$$ which leads to $$\mathbf{P}'_{k_0}(x \in \mathbf{X}_{k0}|D) \ge e^{-\delta_{k_0}}$$
+- Case $$k \ne k_0$$: look at [[https://arxiv.org/pdf/2211.02633#subsection.A.3][appendix]]. TODO: understand this better
+**** Theorem 3
+Basically apply the analysis for WP and TP and the relation into CIL in 3.2 and plug in OOD instead (actually nothing more than this)
+*** 3.4 Necessary Conditions for Improving CIL
+This section is just done for completeness. Basically combining all of the previous theorems and doing the following:
+- Cross Entropy of $$H_{WP}(x) = H_{CIL}(x) \le \eta$$ , $$H_{TP}(x) \le H_{CIL}(x) \le \eta$$, and $$H_{OOD,i}(x) \le H_{TP}(x) \le \eta$$ which sets everything below $$\eta$$
+Intuitively, this makes sense given the relations in 3.2
+** 4 New CIL Techniques and Experiments
+Goal is to slap on some existing OOD algorithms onto pre-existing CIL models and see the performance increase.
+*** 4.1 Datasets, CL Baselines and OOD Detection Methods
+**** Datasets
+1. MNIST (CIL task with 5 tasks with 2 consecutive digits as a task)
+2. CIFAR-10 (5 tasks with 2 consecutive classes as a task)
+3. CIFAR-100 (10 tasks, 10 classes) and (20 tasks, 5 classes)
+4. Tiny-ImageNet (5 tasks, 40 classes) and (10 tasks, 20 classes)
+**** Baseline CL Methods
+- regularization: MUC and PASS
+- replay: LwF, iCaRL, Mnemonics, BiC, DER++, and CO^{2}L
+- orthogonal projection: OWM
+- parameter isolation: CCG, HyperNet, HAT, SupSup (Sup), PR
+**** OOD Detection Methods
+- ODIN: representative method
+- CSI: based on supervised contrastive learning. "rotation data augmentations create distributional shifted samples to act as negative data" More in Appendix D
+*** 4.2 Training Details and Evaluation Metrics
+**** Training Details
+Backbone:
+- AlexNet: MNIST
+- ResNet-18: CIFAR-10, CIFAR-100, Tiny-ImageNet
+
+OWN and HyperNet have their own architectures (but this did not perform well anyway)
+
+For replay methods, memory buffer size is:
+- MNIST: 200
+- CIFAR-10: 200
+- CIFAR-100: 2000
+- Tiny-ImageNet: 2000
+
+Hyperparameters suggested by the authors is what is used. If the results could not be replicated, a grid search is done over the hyperparameters with 10% of the training set.
+**** Evaluation Metrics
+1. /Average classification accuracy/: what was the classification accuracy of the models (also report /forgetting rate/ in Appendix J)
+2. /Average AUC/: Average Area Under the ROC Curve (Probability that the model will rank a randomly chosen positive sample higher than a randomly chosen negative sample [[https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc][more info]]). Average $$AUC$$ means $$AUC = \sum_k \frac{AUC_k}{n}$$ where $$n$$ is the number of tasks.
+**** Prediction Methods
+Use $$P(x \in X_{k_0,j_0} | x \in X_{k_0}, D)P(x \in X_{k_0} | D)$$ ($$P(WP)P(TP)$$) to find Prediction
+- WP: Just take the softmax values of the classes in each task
+- TP: Do one of the following:
+  - For single classification head use $$\hat{y} = \textbf{argmax}\{f(x)\}$$ where $$f(x)$$ is the logit output of the network
+  - For multi-head methods (HAT, HyperNet, and Sup) use a concatenated output $$\hat{y} = \textbf{argmax}\{\bigoplus_{k}f(x)_k\}$$
+    - All of the logits are taken together and smashed into one single vector and then argmax is taken.
+*** 4.3 Better OOD Detection Produces Better CIL Performance
+**** Applying ODIN
+Steps:
+- Train the baseline models using their original algorithms
+- Apply temperature scaling and input noise of ODIN at testing for each task (ODIN specific thing)
+Results:
+[[./images/continual-learning-theoreticalp2.png]]
+Overall, there are performance increases in Classification across the board, while the AUC does not always improve.
+**** Applying CSI
+Could not apply CSI to any of the backbones except for HAT and Sup (which is analyzed in the next section).
+*** 4.4 Full Comparison of HAT+CSI and Sup+CSI with Baselines
+
+**** Why these two combinations are selected:
+- HAT and Sup are TIL system and have very little or no CF
+- CSI is a stronger OOD method than ODIN
+- HAT and Sup don't need to save any previous task data
+CSI is better that ODIN:
+[[./images/continual-learning-theoreticalp3.png]]
+**** Results
+A calibration method is used (denoted by $$+c$$ in the table) that optimizes HAT and Sup by including a small replay buffer of tasks. The accuracy is much higher than all the other baselines
+[[./images/continual-learning-theoreticalp4.png]]
+Additionally, the TIL component improved with the methods given.
+*** 4.5 Implications for Existing CL Methods, Open-World Learning and Future Research
+**** Implication for regularization and replay methods
+/inter-task class separation/ is low in regularization-based methods because they do not consider OOD detection. Replay methods are better (other tasks are naturally OOD for the current task), however, the replay data is small and the resulting OOD is suboptimal.
+**** Implication for open-world learning
+OOD detection lends itself well to bringing open-world learning to CL. This is because autonomous agents can learn inputs as OOD automatically which would lead to "curiosity-driven self-supervised learning".
+**** Limitation and future work
+There are future optimizations to be made in how the input data is represented. There is no guidance on how to get good CIL results in this paper. If "/holistic feature representations/" of the input data are made, then IND detection and OOD detection would become more accurate
+** Conclusion
+This paper gives theoretical and experimental proof that OOD detection is necessary for a performant CIL system.
+** Appendix C Definitions of TP
+TODO
+** Appendix D Details of HAT, Sup, and CSI
+TODO
