@@ -7,17 +7,30 @@
 - *Authors:* Gyuhak Kim, Changnan Xiao, Tatsuya Konishi, Bing Liu
 - *Date:* Jun 2023
 *** Problem Being Solved?
+We want to prove the learnability of CIL (will all the components of a CIL algorithm converge given the correct dataset)
 *** What is an overview of the method?
+The proposed method ROW has the following features:
+- Replay based method
+- at each task $k$, the system receives dataset $D_k$ and uses the replay data (in memory buffer $M$) as OOD data to train the OOD detection model (and also fine-tune the WP head)
+- The model has two heads: one OOD head and one WP head (OOD head is $h_k$ with parameter set $\theta_k$, WP head is $g_k$ with parameter set $\phi_k$) (there are these two heads for every task that we have)
+- Optimization happens on the three parameter sets $(\psi_k, \theta_k, \phi_k)$, where $\psi_k$ is the feature extractor $f_k$'s parameter set
 *** What are the metrics of success?
+- Average Classifcation Accuracy across the tasks is high
+- Average Forgetting Rate across the tasks is low
 *** What are the key innovations over prior work?
+The addition of an OOD detection algorithm to the existing TIL algorithm
 *** What are the key results?
+The ROW algorithm performs better than most of the other baselines
 *** How might this work have long term impact?
+This shows a new method for CIL algorithms that is based in OOD detection
 ** Questions
 - Is the definition of a training set correct in *Definition 1.2* (should what they have as the training set actually be the testing set)
 - Don't understand Orthogonal projection methods for TIL methods (PCP, CUBER)
 - Don't understand the implementation differences between *i* and *ii* in Introduction (seems like different wordings of the same thing)
 - There is some intuition about the Risk function that I am missing
 - need to read through the proofs in the appendix
+- want to understand mahalanobis distance again
+  - Why is this different than what we are doing? - they are taking the average of the feature set across all of the samples. I think that it is different because they are just using the distance of the input samples feature set against the classes as a constant, while our method would use the distance number as part of the loss generation (making the OOD more efficient as it would consider /inter-task separation/).
 * Detailed Review
 ** 1 Introduction
 Continual Learning is important and there is a key challenge of /catastrophic forgetting/ (when learning new tasks, the system forgets old tasks).
@@ -254,3 +267,45 @@ flowchart LR
 The paper notes that performance can be improved by using a "distance-based coefficient defined at the feature level into the output from the OOD head". This means that the OOD detection works better if there is a "distance-based coefficient" (something like mahalanobis score) defined at the level of the features themselves (not necessarily at the output of whether it is OOD or not). After training task $k$ , find the mean/variance of the feature vectors per class of the task and compute Mahalanobis distance $c_k(x) = \text{max}_y \frac{1}{MD(x; \mu_y, \sum_k)}$ where $\mu_y$ is the mean of the class $y$ and $\sum_k$ is the variance. The coefficient will be larger if the features of a test instance is closer to one of the sample means of the task, and smaller otherwise
 
 TP Probability now is $\mathbf{P}(X_k|x) = c_k(x)\max_j \text{softmax}(h_k(x))_j/Z$ where $c_k(x)$ is the constant above, and the max of the softmax of the output heads of each of the OOD classes is taken. Then we divide everything by $Z$ which is a normalizing factor (this $max_j$ can be seen as the maximum of a softmax probability score across the heads of these OOD classes).
+** Empirical Evaluation
+*** Baselines
+There are 12 baselines:
+- Exemplar-free (does not save previous data):
+  - HAT (argmax over the concatenated logits)
+  - OWM
+  - SLDA
+  - L2P
+- Replay Methods
+  - iCaRL
+  - A-GEM
+  - EEIL
+  - GD
+  - DER++
+  - HAL
+  - MORE
+
+There are no parameter-isolation methods included, nor contrastive learning methods
+*** Datasets
+1. CIFAR10 (10 different classes)
+2. CIFAR100 (100 classes)
+3. Tiny-ImageNet (200 classes)
+*** Backbone Architecture and Pre-Training
+The backbone selected is DeiT-S/16 (transformer). Also the classes are separated out when doing the training and testing of the models. The models used are not trained on ImageNet, or the training datasets to avoid leak in the model. Additionally, there is an *adapter module* appended to the end of the models to allow it to adjust to new data.
+*** Training details
+The classes in each of the datasets are split, and a memory budget strategy is used to save an equal number of samples per class.
+*** Evaluation Metrocs
+Two metrics used
+1. Average Classification Accuracy (AUC)
+2. Average Forgetting Rate (ACA): The accuracy of the model on all the tasks that it was previously trained on (more formally $F_t = \sum_{i=1}^{t-1} A_i^i-A_i^t$)
+
+*** 5.1 Results and Comparison
+The new method performs the best everywhere (and MORE is also a performant algorithm). Additioanlly, the size of the memory buffer can be decreased and performance is still maintained. Additionally, the forgetting rate is better than most, except for iCaRl, which has much lower accuracy. Additionally, the forgetting here is not due to the TIL model (HAT is being used which has very low forgetting), but the classification issues that happen with more classes
+
+
+[[file:images/learnability-continual-learningp5.png]]
+*** 5.2 Abalation Experiments
+Performance decreases are clear.
+
+[[file:images/learnability-continual-learningp6.png]]
+** Conclusino
+CIL is learnable, and ROW outperforms strong baselines
