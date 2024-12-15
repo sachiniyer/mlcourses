@@ -198,4 +198,59 @@ The In Distribution samples are given by $D_k$, and the Out of distribution samp
 1. IND sample: the probability $p(y|x,k) = \text{softmax}h_k(f(x,k;\psi_k);\theta_k)_y$
 2. OOD sample: $p(ood|x,k)$
 
-The combination of these two losses is given as $L_{ood}(\psi_t, \theta_t) = -\frac{1}{2N}\left(\sum_{(x,y) \in D_K}\log{p(y|x,k)} + \sum_{(x,y) \in M}\log{p(ood|x,k)}\right)$.
+The combination of these two losses is given as $L_{ood}(\psi_t, \theta_t) = -\frac{1}{2N}\left(\sum_{(x,y) \in D_K}\log{p(y|x,k)} + \sum_{(x,y) \in M}\log{p(ood|x,k)}\right)$. The replay instances are upsampled to achieve an equal number of samples as the current task data $D_k$.
+*** Fine-Tuning the WP Head
+Simple here. Just use cross-entropy loss
+$L_{WP}(\phi_k) = -\frac{1}{N} \sum_{(x,y)\in D_k}\log{p(y|x,k)}$. The probabilities of the classes are just taking the softmax
+
+#+begin_src mermaid :file images/learnability-continual-learningp3.png
+flowchart LR
+   ind[In Distribution Sample]
+   f[Feature Extractor]
+   g["WP Head (class prediction)"]
+   pc["Class Prediction"]
+
+   ind --> f
+   f --> g
+   g --> pc
+#+end_src
+
+#+RESULTS:
+[[file:images/learnability-continual-learningp3.png]]
+
+*** Fine-tuning the OOD Heads of All Tasks
+The OOD heads that are trained first (because the $M$ memory is less diverse - less OOD samplings). To mitigate, train all the previous OOD heads after training each task using only the replay data in $M$ (take out that classes data, use the extracted classes as IND data, and the rest as OOD data). Use the same loss function as above (without the feature parameters) to train again.
+
+#+begin_src mermaid :file images/learnability-continual-learningp4.png
+flowchart LR
+   ind[In Distribution Sample]
+   ood[Out of Distribution Sample]
+   f[Feature Extractor]
+   h1[OOD Head 1]
+   h2[OOD Head 2]
+   h3[OOD Head 3]
+   h4[OOD Head 4]
+   po1["Out of Distribution Prediction1"]
+   po2["Out of Distribution Prediction2"]
+   po3["Out of Distribution Prediction3"]
+   po4["Out of Distribution Prediction4"]
+
+   ind --> f
+   ood --> f
+   f --> h1
+   f --> h2
+   f --> h3
+   f --> h4
+   h1 --> po1
+   h2 --> po2
+   h3 --> po3
+   h4 --> po4
+#+end_src
+
+#+RESULTS:
+[[file:images/learnability-continual-learningp4.png]]
+
+*** Distance-based Coefficient
+The paper notes that performance can be improved by using a "distance-based coefficient defined at the feature level into the output from the OOD head". This means that the OOD detection works better if there is a "distance-based coefficient" (something like mahalanobis score) defined at the level of the features themselves (not necessarily at the output of whether it is OOD or not). After training task $k$ , find the mean/variance of the feature vectors per class of the task and compute Mahalanobis distance $c_k(x) = \text{max}_y \frac{1}{MD(x; \mu_y, \sum_k)}$ where $\mu_y$ is the mean of the class $y$ and $\sum_k$ is the variance. The coefficient will be larger if the features of a test instance is closer to one of the sample means of the task, and smaller otherwise
+
+TP Probability now is $\mathbf{P}(X_k|x) = c_k(x)\max_j \text{softmax}(h_k(x))_j/Z$ where $c_k(x)$ is the constant above, and the max of the softmax of the output heads of each of the OOD classes is taken. Then we divide everything by $Z$ which is a normalizing factor (this $max_j$ can be seen as the maximum of a softmax probability score across the heads of these OOD classes).
