@@ -163,7 +163,7 @@ The training steps are:
 
 The outputs of $h_k$ and $g_k$ are what comprises the final prediction
 
-#+begin_src mermaid :file images/learnability-continual-learningp1.png
+#+begin_src mermaid :file images/learnability-clp1.png
 flowchart LR
    ind[In Distribution Sample]
    ood[Out of Distribution Sample]
@@ -185,12 +185,12 @@ flowchart LR
 #+end_src
 
 #+RESULTS:
-[[file:images/learnability-continual-learningp1.png]]
+[[file:images/learnability-clp1.png]]
 
 *** Training the feature extractor and the OOD head
 Training the OOD head $h_k$ for task k.
 
-#+begin_src mermaid :file images/learnability-continual-learningp2.png
+#+begin_src mermaid :file images/learnability-clp2.png
 flowchart LR
    ind[In Distribution Sample]
    ood[Out of Distribution Sample]
@@ -205,7 +205,7 @@ flowchart LR
 #+end_src
 
 #+RESULTS:
-[[file:images/learnability-continual-learningp2.png]]
+[[file:images/learnability-clp2.png]]
 
 The In Distribution samples are given by $D_k$, and the Out of distribution samples are given by $D_{k'} \in D$ where $k' \ne k$. The network of $h_k \circ f_k$ (combination of the feature extractor and the OOD head) is trained to max two things:
 1. IND sample: the probability $p(y|x,k) = \text{softmax}h_k(f(x,k;\psi_k);\theta_k)_y$
@@ -216,7 +216,7 @@ The combination of these two losses is given as $L_{ood}(\psi_t, \theta_t) = -\f
 Simple here. Just use cross-entropy loss
 $L_{WP}(\phi_k) = -\frac{1}{N} \sum_{(x,y)\in D_k}\log{p(y|x,k)}$. The probabilities of the classes are just taking the softmax
 
-#+begin_src mermaid :file images/learnability-continual-learningp3.png
+#+begin_src mermaid :file images/learnability-clp3.png
 flowchart LR
    ind[In Distribution Sample]
    f[Feature Extractor]
@@ -229,12 +229,12 @@ flowchart LR
 #+end_src
 
 #+RESULTS:
-[[file:images/learnability-continual-learningp3.png]]
+[[file:images/learnability-clp3.png]]
 
 *** Fine-tuning the OOD Heads of All Tasks
 The OOD heads that are trained first (because the $M$ memory is less diverse - less OOD samplings). To mitigate, train all the previous OOD heads after training each task using only the replay data in $M$ (take out that classes data, use the extracted classes as IND data, and the rest as OOD data). Use the same loss function as above (without the feature parameters) to train again.
 
-#+begin_src mermaid :file images/learnability-continual-learningp4.png
+#+begin_src mermaid :file images/learnability-clp4.png
 flowchart LR
    ind[In Distribution Sample]
    ood[Out of Distribution Sample]
@@ -261,7 +261,7 @@ flowchart LR
 #+end_src
 
 #+RESULTS:
-[[file:images/learnability-continual-learningp4.png]]
+[[file:images/learnability-clp4.png]]
 
 *** Distance-based Coefficient
 The paper notes that performance can be improved by using a "distance-based coefficient defined at the feature level into the output from the OOD head". This means that the OOD detection works better if there is a "distance-based coefficient" (something like mahalanobis score) defined at the level of the features themselves (not necessarily at the output of whether it is OOD or not). After training task $k$ , find the mean/variance of the feature vectors per class of the task and compute Mahalanobis distance $c_k(x) = \text{max}_y \frac{1}{MD(x; \mu_y, \sum_k)}$ where $\mu_y$ is the mean of the class $y$ and $\sum_k$ is the variance. The coefficient will be larger if the features of a test instance is closer to one of the sample means of the task, and smaller otherwise
@@ -302,10 +302,10 @@ Two metrics used
 The new method performs the best everywhere (and MORE is also a performant algorithm). Additioanlly, the size of the memory buffer can be decreased and performance is still maintained. Additionally, the forgetting rate is better than most, except for iCaRl, which has much lower accuracy. Additionally, the forgetting here is not due to the TIL model (HAT is being used which has very low forgetting), but the classification issues that happen with more classes
 
 
-[[file:images/learnability-continual-learningp5.png]]
+[[file:images/learnability-clp5.png]]
 *** 5.2 Abalation Experiments
 Performance decreases are clear.
 
-[[file:images/learnability-continual-learningp6.png]]
-** Conclusino
+[[file:images/learnability-clp6.png]]
+** Conclusion
 CIL is learnable, and ROW outperforms strong baselines
