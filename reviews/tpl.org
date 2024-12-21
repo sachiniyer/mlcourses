@@ -2,6 +2,7 @@
 
 
 * Class Incremental Learning via Likelihood Ratio Based Task Prediction
+*QUESTIONS DESCRIBED IN DETAILED REVIEW*
 ** Review
 *** Info
 - *Arxiv:* https://arxiv.org/abs/2309.15048
@@ -14,7 +15,8 @@
 *** What are the key results?
 *** How might this work have long term impact?
 ** Questions
-
+*** TODO Read through Appendix and add more information in the detailed description
+*** TODO Read a bit more through the derivation of the energy function
 * Detailed Review
 ** 1 Introduction
 This paper is focusing on CIL, not TIL (look to [[./cl-theoretical.org]] for the definitions). The main challenge is catastrophic forgetting (again go [[./cl-theoretical.org]] for the definition). The main challenge with catastrophic forgetting is /inter-task class separation/ (look to [[./learnability-cl.org]] for the definition). The new technique that is being proposed is to combine an OOD model with a CIL model to increase that class id prediction. The final prediction is the product of /task-id prediction/ and /within-task prediction/.
@@ -99,3 +101,29 @@ The final $S_{TPL}^{(t)}(x)$ is as follows
 $S_{TPL}^{(t)}(x) = \log\left(\exp\{\beta_1 \cdot S_{MLS}^{(t)}(x)\} + \exp\{\beta_2 \cdot S_{MD}^{(t)}(x) + d_{KNN}(x, {Buf}_{tc})\}\right)$. where $\beta_1$ and $\beta_2$ are scaling terms given by merging $\alpha$ from the first energy function and $\alpha_1$ and $\alpha_2$ from the second energy function. Because $d_{KNN}$ is closer to 1 than the rest, $\beta_1$ and $\beta_2$ are the inverse of the empirical means of the two scores.
 *** 4.3 Converting Task-ID Predicition Scores to Probabilities
 Just take the TPL energy scores and apply softmax on it (adding a temperature constant $\gamma$).
+
+** 5 Experiments
+*** 5.1 Experimental Setup
+[[./images/tplp1.png]]
+**** CIL Baselines
+11 Replay Methods and 6 non-replay methods. The primary method is $HAT_{CIL}$ which adapts HAT for CIL methods.
+**** Datasets
+Split is basically the same as [[./cl-theoretical.org]]
+**** Backbone Architectures
+Two sets of experiments are done, one with a pre-trained model, and one without a pre-trained model. TLP uses the DeiT-S/16 model pretrained without the ImageNet data.
+*** 5.2 Results and Comparisons
+CIL accuracy shows that TPL performs basically the best with and without pretraining
+*** 5.3 Ablation Study
+**** Different $E_t$ vs $E_{t^c}$
+The ablation shows that the $P_{t^c}$ distribution is better than a uniform distribution. Additionally, even though the KNN may outperform the MD method, it is still better to be used for the $P_t$ distribution, because it does not need to have all the data available.
+**** Different logit-based scores
+MSP, MLS, and EBO are considered, EBO and MLS were comparable, but MLS (maximum logit score) still performed the best. MSP was not comparable.
+**** Smaller replay buffer size
+The performance drop when using a smaller replay buffer size is small, and TPL is robust to using smaller replay sizes
+**** More OOD methods
+1. There is a linear relationship between OOD detection AUC and CIL ACC performances (the area under the curve of binary classification between $P_t$ and $P_{t^c}$)
+2. Different OOD methods have similar TIL when applying hat (just can't do OOD properly)
+**** More pre-trained models
+The method is extensible to other pretrained models (MAE, Dino, ViT, and DeiT)
+** Conclusion
+Traditional OOD does not work very well for CIl, and TPL outperforms strong baselines and has very little catastrophic forgetting
