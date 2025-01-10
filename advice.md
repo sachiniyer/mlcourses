@@ -44,3 +44,5 @@ If you'd like to get your hands dirty... Ilya Sutskever recommends implementing 
 - Machine Learning Applications - Project that spans Letta Software Engineering Stack
 
 https://huyenchip.com/ml-interviews-book/
+
+https://github.com/emilwallner/How-to-learn-Deep-Learning
